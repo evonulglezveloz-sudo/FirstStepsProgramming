@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>10 ED 🗄️</title>
+    </head>
+    <body>
+        <header class="header-titulo 10ed">
+            <h1 id="#">10 ESTRUCTURAS DE DATOS PRINCIPALES</h1>
+            <button onclick="cambioImagenEstructurasDatos()" type="button" class="img-ed"><img src="https://eseg.edu.br/wp-content/uploads/2026/05/Estrutura-de-Dados-quais-sao-e-como-aplicar-na-programacao.jpg" class="estructuras-datos" width="500px" alt="Estructuras Datos"></button>
+        </header>
+        <section>
+            <article>
+                <br>
+                <div class="estructura-data">
+                    <button onclick="descripcionEstructuraDatos()" type="button" class="estructura-datos-button"><strong>Estructura de Datos</strong></button>
+                    <p class="estructuras"></p>
+                </div>
+            <hr>
+                <div class="all-content">
+                    <div class="hash-table">
+                        <button onclick="cambioTextoHashTable()" type="button" class="tabla-hash-button"><h3 class="cambiar-texto-tablahash">Tabla hash</h3></button>
+                        <br><br>
+                        <button onclick="descripcionTablaHash()" type="button" class="tabla-hash-button"><span><strong>¿Qué es?</strong></span></button>
+                        <p class="descripcion-hash-table"></p>
+                        <br>
+                        <button onclick="cambioImagenTablaHash()" type="button" class="tabla-hash-button"><img src="https://img.sanishtech.com/u/4711b6ea05d381128c4fa58cec4898cc.png" class="imagen-hash-table" width="200px" alt="Hash Table"></button>
+                        <p>Ej Diccionario:</p>
+                        <ul class="ej-hash-table">
+                            <li>Clave: "México"</li>
+                            <li>Valor: "Ciudad de México"</li>
+                        </ul>
+                        <button onclick="paraQueSirveTablaHash()" type="button" class="tabla-hash-button"><p><strong>¿Para qué sirve?</strong></p></button>
+                        <p class="descripcion-funcion-tablahash"></p>
+                        <br>
+                        <button onclick="cuandoUtilizaTablaHash()" type="button" class="tabla-hash-button"><p><strong>¿Cuándo se utiliza?</strong></p></button>
+                        <p class="descripcion-utiliza-tablahash"></p>
+                    </div>
+                    <hr>
+                    <div class="lista-array">
+                        <button onclick="cambioTextoArray()" type="button" class="array-button"><h3 class="cambiar-texto-array">Lista</h3></button>
+                        <br><br>
+                        <button onclick="descripcionArray()" type="button" class="array-button"><span><strong>¿Qué es?</strong></span></button>
+                        <p class="descripcion-array"></p>
+                        <br>
+                        <button onclick="cambioImagenArray()" type="button" class="array-button"><img src="https://img.sanishtech.com/u/083bb6e93b25d699b4858c7d72057416.png" class="imagen-array" width="200px" alt="Array"></button>
+                        <br><br>
+                        <button onclick="paraQueSirveArray()" type="button" class="array-button"><p><strong>¿Para qué sirve?</strong></p></button>
+                        <p class="descripcion-funcion-array"></p>
+                        <br>
+                        <button onclick="cuandoUtilizaArray()" type="button" class="array-button"><p><strong>¿Cuándo se utiliza?</strong></p></button>
+                        <p class="descripcion-utiliza-array"></p>
+                    </div>
+                        <hr>
+                        <div class="pila-stack">
+                            <button onclick="cambioTextoPila()" type="button" class="pila-button"><h3 class="cambiar-texto-pila">Pila</h3></button>
+                            <br><br>
+                            <button onclick="descripcionPila()" type="button" class="pila-button"><span><strong>¿Qué es?</strong></span></button>
+                            <p class="descripcion-pila"></p>
+                            <button onclick="descripcionExtraPila()" type="button" class="pila-button"><span><strong>Se conoce como:</strong></span></button>
+                            <p class="descripcion-extra-pila"></p>
+                            <br>
+                            <button onclick="cambioImagenPila()" type="button" class="pila-button"><img src="https://img.sanishtech.com/u/a23876342079ef5ce4fc70648002e0f0.png" class="imagen-pila" width="200px" alt="Pila"></button>
+                            <br><br>
+                            <button onclick="paraQueSirvePila()" type="button" class="pila-button"><p><strong>¿Para qué sirve?</strong></p></button>
+                            <p class="descripcion-funcion-pila"></p>
+                            <br>
+                            <button onclick="cuandoUtilizaPila()" type="button" class="pila-button"><p><strong>¿Cuándo se utiliza?</strong></p></button>
+                            <p class="descripcion-utiliza-pila"></p>
+                        </div>
+                            <hr>
+                            <div class="cola-queue">
+                                <button onclick="cambioTextoCola()" type="button" class="cola-button"><h3 class="cambiar-texto-cola">Cola</h3></button>
+                                <br><br>
+                                <button onclick="descripcionCola()" type="button" class="cola-button"><span><strong>¿Qué es?</strong></span></button>
+                                <p class="descripcion-cola"></p>
+                                <button onclick="descripcionExtraCola()" type="button" class="cola-button"><span><strong>Se conoce como:</strong></span></button>
+                                <p class="descripcion-extra-cola"></p>
+                                <br>
+                                <button onclick="cambioImagenCola()" type="button" class="cola-button"><img src="https://cdn.phototourl.com/member/2026-11-11-5a4b6847-6741-4529-a830-31f324dab969.png" class="imagen-cola" width="200px" alt="Cola"></button>
+                                <br><br>
+                                <button onclick="paraQueSirveCola()" type="button" class="cola-button"><p><strong>¿Para qué sirve?</strong></p></button>
+                                <p class="descripcion-funcion-cola"></p>
+                                <br>
+                                <button onclick="cuandoUtilizaCola()" type="button" class="cola-button"><p><strong>¿Cuándo se utiliza?</strong></p></button>
+                                <p class="descripcion-utiliza-cola"></p>
+                            </div>
+                                <hr>
+                                <div class="linked-list">
+                                    <button onclick="cambioTextoLinkedList()" type="button" class="linked-list-button"><h3 class="cambiar-texto-linkedlist">Lista enlazada</h3></button>
+                                    <br><br>
+                                    <button onclick="descripcionLinkedList()" type="button" class="linked-list-button"><span><strong>¿Qué es?</strong></span></button>
+                                    <p class="descripcion-linked-list"></p>
+                                    <button onclick="descripcionExtraLinkedList()" type="button" class="linked-list-button"><span><strong>Cada nodo guarda:</strong></span></button>
+                                    <p class="descripcion-extra-linkedlist"></p>
+                                    <br>
+                                    <button onclick="cambioImagenLinkedList()" type="button" class="linked-list-button"><img src="https://cdn.phototourl.com/member/2026-11-11-28aea23e-c810-4968-8456-d290ba787952.png" class="imagen-linked-list" width="200px" alt="Linked List"></button>
+                                    <br><br>
+                                    <button onclick="paraQueSirveLinkedList()" type="button" class="linked-list-button"><p><strong>¿Para qué sirve?</strong></p></button>
+                                    <p class="descripcion-funcion-linkedlist"></p>
+                                    <br>
+                                    <button onclick="cuandoUtilizaLinkedList()" type="button" class="linked-list-button"><p><strong>¿Cuándo se utiliza?</strong></p></button>
+                                    <button onclick="descripcionNodo()" type="button" class="linked-list-button"><p><strong>Nodo</strong></p></button>
+                                    <p class="descripcion-utiliza-linkedlist"></p>
+                                </div>
+                                    <hr>
+                                    <div class="arbol">
+                                        <button onclick="cambioTextoArbol()" type="button" class="arbol-button"><h3 class="cambiar-texto-arbol">Árbol</h3></button>
+                                        <br><br>
+                                        <button onclick="descripcionArbol()" type="button" class="arbol-button"><span><strong>¿Qué es?</strong></span></button>
+                                        <p class="descripcion-arbol"></p>
+                                        <button onclick="descripcionExtraArbol()" type="button" class="arbol-button"><span><strong>Tiene:</strong></span></button>
+                                        <p class="descripcion-extra-arbol"></p>
+                                        <br>
+                                        <button onclick="cambioImagenArbol()" type="button" class="arbol-button"><img src="https://cdn.phototourl.com/member/2026-11-11-54342ca5-9e46-4da7-89ee-079430349c3a.png" class="imagen-arbol" width="200px" alt="Árbol"></button>
+                                        <br><br>
+                                        <button onclick="paraQueSirveArbol()" type="button" class="arbol-button"><p><strong>¿Para qué sirve?</strong></p></button>
+                                        <p class="descripcion-funcion-arbol"></p>
+                                        <br>
+                                        <button onclick="cuandoUtilizaArbol()" type="button" class="arbol-button"><p><strong>¿Cuándo se utiliza?</strong></p></button>
+                                        <p class="descripcion-utiliza-arbol"></p>
+                                    </div>
+                                        <hr>
+                                        <div class="arbol-binario">
+                                            <button onclick="cambioTextoArbolBinario()" type="button" class="arbol-binario-button"><h3 class="cambiar-texto-arbolbinario">Árbol binario</h3></button>
+                                            <br><br>
+                                            <button onclick="descripcionArbolBinario()" type="button" class="arbol-binario-button"><span><strong>¿Qué es?</strong></span></button>
+                                            <p class="descripcion-arbolbinario"></p>
+                                            <br>
+                                            <button onclick="cambioImagenArbolBinario()" type="button" class="arbol-binario-button"><img src="https://cdn.phototourl.com/member/2026-11-12-4063c5fe-4f1a-4534-bb2e-811ff3cf01d8.png" class="imagen-arbol-binario" width="200px" alt="Árbol binario"></button>
+                                            <br><br>
+                                            <button onclick="paraQueSirveArbolBinario()" type="button" class="arbol-binario-button"><p><strong>¿Para qué sirve?</strong></p></button>
+                                            <p class="descripcion-funcion-arbolbinario"></p>
+                                            <br>
+                                            <button onclick="cuandoUtilizaArbolBinario()" type="button" class="arbol-binario-button"><p><strong>¿Cuándo se utiliza?</strong></p></button>
+                                            <p class="descripcion-utiliza-arbolbinario"></p>
+                                        </div>
+                                            <hr>
+                                            <div class="arbol-binario-busqueda">
+                                                <button onclick="cambioTextoArbolBinarioBusqueda()" type="button" class="arbol-binariobusqueda-button"><h3 class="cambiar-texto-arbolbinariobusqueda">Árbol binario de búsqueda</h3></button>
+                                                <br><br>
+                                                <button onclick="descripcionArbolBinarioBusqueda()" type="button" class="arbol-binariobusqueda-button"><span><strong>¿Qué es?</strong></span></button>
+                                                <p class="descripcion-arbolbinario-busqueda"></p>
+                                                <button onclick="descripcionExtraArbolBinarioBusqueda()" type="button" class="arbol-binariobusqueda-button"><span><strong>Tiene una regla:</strong></span></button>
+                                                <p class="descripcion-extra-arbolbinariobusqueda"></p>
+                                                <br>
+                                                <button onclick="cambioImagenArbolBinarioBusqueda()" type="button" class="arbol-binariobusqueda-button"><img src="https://cdn.phototourl.com/member/2026-11-12-c3d5f510-59fe-4696-a616-d0f0d0354ce3.png" class="imagen-arbol-binariobusqueda" width="200px" alt="Árbol binario de búsqueda"></button>
+                                                <br><br>
+                                                <button onclick="paraQueSirveArbolBinarioBusqueda()" type="button" class="arbol-binariobusqueda-button"><p><strong>¿Para qué sirve?</strong></p></button>
+                                                <p class="descripcion-funcion-arbolbinariobusqueda"></p>
+                                                <br>
+                                                <button onclick="cuandoUtilizaArbolBinarioBusqueda()" type="button" class="arbol-binariobusqueda-button"><p><strong>¿Cuándo se utiliza?</strong></p></button>
+                                                <p class="descripcion-utiliza-arbolbinariobusqueda"></p>
+                                            </div>
+                                                <hr>
+                                                <div class="grafos">
+                                                    <button onclick="cambioTextoGrafos()" type="button" class="grafos-button"><h3 class="cambiar-texto-grafos">Grafos</h3></button>
+                                                    <br><br>
+                                                    <button onclick="descripcionGrafos()" type="button" class="grafos-button"><span><strong>¿Qué es?</strong></span></button>
+                                                    <p class="descripcion-grafos"></p>
+                                                    <button onclick="descripcionExtraGrafos()" type="button" class="grafos-button"><span><strong>A-B-C-D</strong></span></button>
+                                                    <br><br>
+                                                    <button onclick="cambioImagenGrafos()" type="button" class="grafos-button"><img src="https://cdn.phototourl.com/member/2026-11-12-3bf19656-92f2-4889-9c76-cde9df37611f.png" class="imagen-grafos" width="200px" alt="Grafos"></button>
+                                                    <br><br>
+                                                    <button onclick="paraQueSirveGrafos()" type="button" class="grafos-button"><p><strong>¿Para qué sirve?</strong></p></button>
+                                                    <p class="descripcion-funcion-grafos"></p>
+                                                    <br>
+                                                    <button onclick="cuandoUtilizaGrafos()" type="button" class="grafos-button"><p><strong>¿Cuándo se utiliza?</strong></p></button>
+                                                    <p class="descripcion-utiliza-grafos"></p>
+                                                </div>
+                                                    <hr>
+                                                    <div class="heap">
+                                                        <button onclick="cambioTextoHeap()" type="button" class="heap-button"><h3 class="cambiar-texto-heap">Montículo</h3></button>
+                                                        <br><br>
+                                                        <button onclick="descripcionHeap()" type="button" class="heap-button"><span><strong>¿Qué es?</strong></span></button>
+                                                        <p class="descripcion-heap"></p>
+                                                        <button onclick="descripcionExtraHeap()" type="button" class="heap-button"><span><strong class="tipos">Existen 2 tipos:</strong></span></button>
+                                                        <br><br>
+                                                        <button onclick="cambioImagenHeap()" type="button" class="heap-button"><img src="https://cdn.phototourl.com/member/2026-11-12-0d1c369b-d2b8-4032-aa43-febbde8dba77.png" class="imagen-heap" width="200px" alt="Heap"></button>
+                                                        <br><br>
+                                                        <button onclick="paraQueSirveHeap()" type="button" class="heap-button"><p><strong>¿Para qué sirve?</strong></p></button>
+                                                        <p class="descripcion-funcion-heap"></p>
+                                                        <br>
+                                                        <button onclick="cuandoUtilizaHeap()" type="button" class="heap-button"><p><strong>¿Cuándo se utiliza?</strong></p></button>
+                                                        <p class="descripcion-utiliza-heap"></p>
+                                                    </div>
+                </div>
+            </article>
+        </section>
+    <footer>
+        <section>
+            <a href="#">Volver arriba</a>
+        </section>
+        <p>&copy; 2026 Bases de Datos. Todos los derechos reservados. EUGV.</p>
+    </footer>
+        <script src="app.js"></script>
+    </body>
+</html>
