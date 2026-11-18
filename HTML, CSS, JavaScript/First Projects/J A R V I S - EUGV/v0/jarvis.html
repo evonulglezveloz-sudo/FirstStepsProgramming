@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.R.V.I.S. - Interfaz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="jarvis.css">
+</head>
+<body>
+
+    <div id="encabezado">
+        <div id="logo-jarvis">
+            J . A . R . V . I . S
+            <span>SISTEMA DE ASISTENCIA INTELIGENTE E.U.G.V</span>
+        </div>
+        <div id="estado-sistema">
+            <span id="punto-estado"></span>
+            SISTEMA EN LINEA
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Para cambiar el ORDEN de las columnas, mueve estos 3 <div>
+         de lugar aqui mismo. El CSS solo usa float: left en los tres,
+         asi que se acomodan de izquierda a derecha en el orden en
+         el que los escribas. -->
+    <div id="contenido-principal">
+
+        <div id="panel-modulos">
+            <h3 id="titulo-modulos">MODULOS DEL SISTEMA</h3>
+
+            <div id="tarjeta-interfaz-visual">
+                <span>Interfaz visual</span>
+                <span id="etiqueta-interfaz-visual">ACTIVO</span>
+            </div>
+
+            <div id="tarjeta-reconocimiento-voz">
+                <span>Reconocimiento de voz</span>
+                <span id="etiqueta-reconocimiento-voz">PLANIFICADO</span>
+            </div>
+
+            <div id="tarjeta-sintesis-voz">
+                <span>Sintesis de voz</span>
+                <span id="etiqueta-sintesis-voz">PLANIFICADO</span>
+            </div>
+
+            <div id="tarjeta-ejecucion-tareas">
+                <span>Ejecucion de tareas</span>
+                <span id="etiqueta-ejecucion-tareas">PLANIFICADO</span>
+            </div>
+
+            <div id="tarjeta-busqueda-internet">
+                <span>Busqueda en internet</span>
+                <span id="etiqueta-busqueda-internet">PLANIFICADO</span>
+            </div>
+
+            <div id="tarjeta-memoria-contexto">
+                <span>Memoria y contexto</span>
+                <span id="etiqueta-memoria-contexto">PLANIFICADO</span>
+            </div>
+        </div>
+
+        <div id="panel-nucleo">
+            <h3 id="titulo-nucleo">NUCLEO</h3>
+
+            <div id="nucleo-central">
+                <div id="anillo-externo">
+                    <div id="anillo-medio">
+                        <div id="anillo-interno">
+                            <div id="centro-nucleo"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p id="mensaje-nucleo">ESPERANDO COMANDO DE VOZ</p>
+
+            <div id="ecualizador">
+                <span id="barra-1"></span>
+                <span id="barra-2"></span>
+                <span id="barra-3"></span>
+                <span id="barra-4"></span>
+                <span id="barra-5"></span>
+            </div>
+        </div>
+
+        <div id="panel-registro">
+            <h3 id="titulo-registro">REGISTRO DEL NUCLEO</h3>
+            <p id="registro-inicio">Interfaz grafica inicializada</p>
+            <p>Cargando paneles del sistema</p>
+            <p>Modulo de voz: <span id="estado-voz">en espera</span></p>
+            <p>Modulo de tareas: <span id="estado-tareas">en espera</span></p>
+            <p>Conexion a internet: <span id="estado-internet">no conectada</span></p>
+            <p>Memoria de contexto: <span id="estado-memoria">no inicializada</span></p>
+            <p id="registro-fase">Fase actual: diseno visual</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <footer id="pie-pagina">
+        <span id="version-sistema">J.A.R.V.I.S. - PROTOTIPO v0</span>
+        <span id="etiqueta-fase">FASE 1: SOLO INTERFAZ</span>
+    </footer>
+
+</body>
+</html>
