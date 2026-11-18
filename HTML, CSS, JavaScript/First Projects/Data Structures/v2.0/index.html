@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@500;700&display=swap">
+        <link rel="stylesheet" href="styles.css">
+        <title>10 ED 🗄️</title>
+    </head>
+    <body>
+        <header class="encabezado-principal" id="inicio">
+            <h1 class="titulo-principal">10 ESTRUCTURAS DE DATOS PRINCIPALES</h1>
+            <div class="holograma-principal">
+                <button onclick="cambiarImagenEstructurasDatos()" type="button" class="boton-imagen boton-imagen-estructuras-datos" aria-label="Cambiar imagen"><img src="https://eseg.edu.br/wp-content/uploads/2026/05/Estrutura-de-Dados-quais-sao-e-como-aplicar-na-programacao.jpg" class="imagen-estructuras-datos" alt="Estructuras de Datos"></button>
+            </div>
+        </header>
+        <main class="contenido-principal">
+            <section class="seccion-definicion-estructuras-datos">
+                <button onclick="mostrarDefinicionEstructuraDatos()" type="button" class="boton-texto boton-definicion-estructuras-datos">Estructura de Datos</button>
+                <p class="texto-revelado definicion-estructuras-datos"></p>
+            </section>
+            <section class="cuadricula-estructuras" id="cuadricula-estructuras" aria-label="Estructuras de datos">
+                <div class="estructura estructura-tabla-hash" style="--acento:hsl(190 95% 60%);--orden:0">
+                    <button type="button" class="tarjeta-estructura tarjeta-tabla-hash" data-panel="panel-tabla-hash">
+                        <small class="tarjeta-numero">01</small>
+                        <span class="tarjeta-emblema"><span class="tarjeta-icono">🔑</span></span>
+                        <h3 class="tarjeta-nombre">Tabla hash</h3>
+                        <em class="tarjeta-indicacion">Toca para explorar</em>
+                    </button>
+                    <div class="panel-fondo panel-fondo-tabla-hash" id="panel-tabla-hash">
+                        <div class="panel-contenido panel-contenido-tabla-hash">
+                            <button type="button" class="boton-cerrar-panel boton-cerrar-tabla-hash" aria-label="Cerrar">✕</button>
+                            <button onclick="cambiarIdiomaTablaHash()" type="button" class="boton-nombre boton-nombre-tabla-hash"><span class="titulo-tabla-hash">Tabla hash</span></button>
+                            <button onclick="mostrarQueEsTablaHash()" type="button" class="boton-texto boton-que-es-tabla-hash">¿Qué es?</button>
+                            <p class="texto-revelado que-es-tabla-hash"></p>
+                            <button onclick="cambiarImagenTablaHash()" type="button" class="boton-imagen boton-imagen-tabla-hash"><img src="https://cdn.phototourl.com/member/2026-11-18-e2b44eb7-d32f-42fc-899a-09934228b657.png" class="imagen-tabla-hash" alt="Tabla hash"></button>
+                            <p class="texto-ejemplo-tabla-hash">Ej. Diccionario:</p>
+                            <ul class="lista-ejemplo-tabla-hash">
+                                <li>Clave: "México"</li>
+                                <li>Valor: "Ciudad de México"</li>
+                            </ul>
+                            <button onclick="mostrarParaQueSirveTablaHash()" type="button" class="boton-texto boton-para-que-sirve-tabla-hash">¿Para qué sirve?</button>
+                            <p class="texto-revelado para-que-sirve-tabla-hash"></p>
+                            <button onclick="mostrarCuandoSeUtilizaTablaHash()" type="button" class="boton-texto boton-cuando-se-utiliza-tabla-hash">¿Cuándo se utiliza?</button>
+                            <p class="texto-revelado cuando-se-utiliza-tabla-hash"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="estructura estructura-lista" style="--acento:hsl(193 95% 60%);--orden:1">
+                    <button type="button" class="tarjeta-estructura tarjeta-lista" data-panel="panel-lista">
+                        <small class="tarjeta-numero">02</small>
+                        <span class="tarjeta-emblema"><span class="tarjeta-icono">📋</span></span>
+                        <h3 class="tarjeta-nombre">Lista</h3>
+                        <em class="tarjeta-indicacion">Toca para explorar</em>
+                    </button>
+                    <div class="panel-fondo panel-fondo-lista" id="panel-lista">
+                        <div class="panel-contenido panel-contenido-lista">
+                            <button type="button" class="boton-cerrar-panel boton-cerrar-lista" aria-label="Cerrar">✕</button>
+                            <button onclick="cambiarIdiomaLista()" type="button" class="boton-nombre boton-nombre-lista"><span class="titulo-lista">Lista</span></button>
+                            <button onclick="mostrarQueEsLista()" type="button" class="boton-texto boton-que-es-lista">¿Qué es?</button>
+                            <p class="texto-revelado que-es-lista"></p>
+                            <button onclick="cambiarImagenLista()" type="button" class="boton-imagen boton-imagen-lista"><img src="https://cdn.phototourl.com/member/2026-11-18-ee685073-fef9-455c-8098-9b964dc39abe.png" class="imagen-lista" alt="Lista"></button>
+                            <button onclick="mostrarParaQueSirveLista()" type="button" class="boton-texto boton-para-que-sirve-lista">¿Para qué sirve?</button>
+                            <p class="texto-revelado para-que-sirve-lista"></p>
+                            <button onclick="mostrarCuandoSeUtilizaLista()" type="button" class="boton-texto boton-cuando-se-utiliza-lista">¿Cuándo se utiliza?</button>
+                            <p class="texto-revelado cuando-se-utiliza-lista"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="estructura estructura-pila" style="--acento:hsl(196 95% 60%);--orden:2">
+                    <button type="button" class="tarjeta-estructura tarjeta-pila" data-panel="panel-pila">
+                        <small class="tarjeta-numero">03</small>
+                        <span class="tarjeta-emblema"><span class="tarjeta-icono">🥞</span></span>
+                        <h3 class="tarjeta-nombre">Pila</h3>
+                        <em class="tarjeta-indicacion">Toca para explorar</em>
+                    </button>
+                    <div class="panel-fondo panel-fondo-pila" id="panel-pila">
+                        <div class="panel-contenido panel-contenido-pila">
+                            <button type="button" class="boton-cerrar-panel boton-cerrar-pila" aria-label="Cerrar">✕</button>
+                            <button onclick="cambiarIdiomaPila()" type="button" class="boton-nombre boton-nombre-pila"><span class="titulo-pila">Pila</span></button>
+                            <button onclick="mostrarQueEsPila()" type="button" class="boton-texto boton-que-es-pila">¿Qué es?</button>
+                            <p class="texto-revelado que-es-pila"></p>
+                            <button onclick="mostrarExtraPila()" type="button" class="boton-texto boton-extra-pila">Se conoce como:</button>
+                            <p class="texto-revelado extra-pila"></p>
+                            <button onclick="cambiarImagenPila()" type="button" class="boton-imagen boton-imagen-pila"><img src="https://img.sanishtech.com/u/a23876342079ef5ce4fc70648002e0f0.png" class="imagen-pila" alt="Pila"></button>
+                            <button onclick="mostrarParaQueSirvePila()" type="button" class="boton-texto boton-para-que-sirve-pila">¿Para qué sirve?</button>
+                            <p class="texto-revelado para-que-sirve-pila"></p>
+                            <button onclick="mostrarCuandoSeUtilizaPila()" type="button" class="boton-texto boton-cuando-se-utiliza-pila">¿Cuándo se utiliza?</button>
+                            <p class="texto-revelado cuando-se-utiliza-pila"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="estructura estructura-cola" style="--acento:hsl(199 95% 60%);--orden:3">
+                    <button type="button" class="tarjeta-estructura tarjeta-cola" data-panel="panel-cola">
+                        <small class="tarjeta-numero">04</small>
+                        <span class="tarjeta-emblema"><span class="tarjeta-icono">🚶</span></span>
+                        <h3 class="tarjeta-nombre">Cola</h3>
+                        <em class="tarjeta-indicacion">Toca para explorar</em>
+                    </button>
+                    <div class="panel-fondo panel-fondo-cola" id="panel-cola">
+                        <div class="panel-contenido panel-contenido-cola">
+                            <button type="button" class="boton-cerrar-panel boton-cerrar-cola" aria-label="Cerrar">✕</button>
+                            <button onclick="cambiarIdiomaCola()" type="button" class="boton-nombre boton-nombre-cola"><span class="titulo-cola">Cola</span></button>
+                            <button onclick="mostrarQueEsCola()" type="button" class="boton-texto boton-que-es-cola">¿Qué es?</button>
+                            <p class="texto-revelado que-es-cola"></p>
+                            <button onclick="mostrarExtraCola()" type="button" class="boton-texto boton-extra-cola">Se conoce como:</button>
+                            <p class="texto-revelado extra-cola"></p>
+                            <button onclick="cambiarImagenCola()" type="button" class="boton-imagen boton-imagen-cola"><img src="https://cdn.phototourl.com/member/2026-11-11-5a4b6847-6741-4529-a830-31f324dab969.png" class="imagen-cola" alt="Cola"></button>
+                            <button onclick="mostrarParaQueSirveCola()" type="button" class="boton-texto boton-para-que-sirve-cola">¿Para qué sirve?</button>
+                            <p class="texto-revelado para-que-sirve-cola"></p>
+                            <button onclick="mostrarCuandoSeUtilizaCola()" type="button" class="boton-texto boton-cuando-se-utiliza-cola">¿Cuándo se utiliza?</button>
+                            <p class="texto-revelado cuando-se-utiliza-cola"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="estructura estructura-lista-enlazada" style="--acento:hsl(202 95% 60%);--orden:4">
+                    <button type="button" class="tarjeta-estructura tarjeta-lista-enlazada" data-panel="panel-lista-enlazada">
+                        <small class="tarjeta-numero">05</small>
+                        <span class="tarjeta-emblema"><span class="tarjeta-icono">🔗</span></span>
+                        <h3 class="tarjeta-nombre">Lista enlazada</h3>
+                        <em class="tarjeta-indicacion">Toca para explorar</em>
+                    </button>
+                    <div class="panel-fondo panel-fondo-lista-enlazada" id="panel-lista-enlazada">
+                        <div class="panel-contenido panel-contenido-lista-enlazada">
+                            <button type="button" class="boton-cerrar-panel boton-cerrar-lista-enlazada" aria-label="Cerrar">✕</button>
+                            <button onclick="cambiarIdiomaListaEnlazada()" type="button" class="boton-nombre boton-nombre-lista-enlazada"><span class="titulo-lista-enlazada">Lista enlazada</span></button>
+                            <button onclick="mostrarQueEsListaEnlazada()" type="button" class="boton-texto boton-que-es-lista-enlazada">¿Qué es?</button>
+                            <p class="texto-revelado que-es-lista-enlazada"></p>
+                            <button onclick="mostrarExtraListaEnlazada()" type="button" class="boton-texto boton-extra-lista-enlazada">Cada nodo guarda:</button>
+                            <p class="texto-revelado extra-lista-enlazada"></p>
+                            <button onclick="cambiarImagenListaEnlazada()" type="button" class="boton-imagen boton-imagen-lista-enlazada"><img src="https://cdn.phototourl.com/member/2026-11-11-28aea23e-c810-4968-8456-d290ba787952.png" class="imagen-lista-enlazada" alt="Lista enlazada"></button>
+                            <button onclick="mostrarParaQueSirveListaEnlazada()" type="button" class="boton-texto boton-para-que-sirve-lista-enlazada">¿Para qué sirve?</button>
+                            <p class="texto-revelado para-que-sirve-lista-enlazada"></p>
+                            <button onclick="mostrarCuandoSeUtilizaListaEnlazada()" type="button" class="boton-texto boton-cuando-se-utiliza-lista-enlazada">¿Cuándo se utiliza?</button>
+                            <button onclick="mostrarDefinicionNodo()" type="button" class="boton-texto boton-nodo-lista-enlazada">Nodo</button>
+                            <p class="texto-revelado cuando-se-utiliza-lista-enlazada"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="estructura estructura-arbol" style="--acento:hsl(205 95% 60%);--orden:5">
+                    <button type="button" class="tarjeta-estructura tarjeta-arbol" data-panel="panel-arbol">
+                        <small class="tarjeta-numero">06</small>
+                        <span class="tarjeta-emblema"><span class="tarjeta-icono">🌳</span></span>
+                        <h3 class="tarjeta-nombre">Árbol</h3>
+                        <em class="tarjeta-indicacion">Toca para explorar</em>
+                    </button>
+                    <div class="panel-fondo panel-fondo-arbol" id="panel-arbol">
+                        <div class="panel-contenido panel-contenido-arbol">
+                            <button type="button" class="boton-cerrar-panel boton-cerrar-arbol" aria-label="Cerrar">✕</button>
+                            <button onclick="cambiarIdiomaArbol()" type="button" class="boton-nombre boton-nombre-arbol"><span class="titulo-arbol">Árbol</span></button>
+                            <button onclick="mostrarQueEsArbol()" type="button" class="boton-texto boton-que-es-arbol">¿Qué es?</button>
+                            <p class="texto-revelado que-es-arbol"></p>
+                            <button onclick="mostrarExtraArbol()" type="button" class="boton-texto boton-extra-arbol">Tiene:</button>
+                            <p class="texto-revelado extra-arbol"></p>
+                            <button onclick="cambiarImagenArbol()" type="button" class="boton-imagen boton-imagen-arbol"><img src="https://cdn.phototourl.com/member/2026-11-11-54342ca5-9e46-4da7-89ee-079430349c3a.png" class="imagen-arbol" alt="Árbol"></button>
+                            <button onclick="mostrarParaQueSirveArbol()" type="button" class="boton-texto boton-para-que-sirve-arbol">¿Para qué sirve?</button>
+                            <p class="texto-revelado para-que-sirve-arbol"></p>
+                            <button onclick="mostrarCuandoSeUtilizaArbol()" type="button" class="boton-texto boton-cuando-se-utiliza-arbol">¿Cuándo se utiliza?</button>
+                            <p class="texto-revelado cuando-se-utiliza-arbol"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="estructura estructura-arbol-binario" style="--acento:hsl(208 95% 60%);--orden:6">
+                    <button type="button" class="tarjeta-estructura tarjeta-arbol-binario" data-panel="panel-arbol-binario">
+                        <small class="tarjeta-numero">07</small>
+                        <span class="tarjeta-emblema"><span class="tarjeta-icono">🌿</span></span>
+                        <h3 class="tarjeta-nombre">Árbol binario</h3>
+                        <em class="tarjeta-indicacion">Toca para explorar</em>
+                    </button>
+                    <div class="panel-fondo panel-fondo-arbol-binario" id="panel-arbol-binario">
+                        <div class="panel-contenido panel-contenido-arbol-binario">
+                            <button type="button" class="boton-cerrar-panel boton-cerrar-arbol-binario" aria-label="Cerrar">✕</button>
+                            <button onclick="cambiarIdiomaArbolBinario()" type="button" class="boton-nombre boton-nombre-arbol-binario"><span class="titulo-arbol-binario">Árbol binario</span></button>
+                            <button onclick="mostrarQueEsArbolBinario()" type="button" class="boton-texto boton-que-es-arbol-binario">¿Qué es?</button>
+                            <p class="texto-revelado que-es-arbol-binario"></p>
+                            <button onclick="cambiarImagenArbolBinario()" type="button" class="boton-imagen boton-imagen-arbol-binario"><img src="https://cdn.phototourl.com/member/2026-11-12-4063c5fe-4f1a-4534-bb2e-811ff3cf01d8.png" class="imagen-arbol-binario" alt="Árbol binario"></button>
+                            <button onclick="mostrarParaQueSirveArbolBinario()" type="button" class="boton-texto boton-para-que-sirve-arbol-binario">¿Para qué sirve?</button>
+                            <p class="texto-revelado para-que-sirve-arbol-binario"></p>
+                            <button onclick="mostrarCuandoSeUtilizaArbolBinario()" type="button" class="boton-texto boton-cuando-se-utiliza-arbol-binario">¿Cuándo se utiliza?</button>
+                            <p class="texto-revelado cuando-se-utiliza-arbol-binario"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="estructura estructura-arbol-binario-busqueda" style="--acento:hsl(211 95% 60%);--orden:7">
+                    <button type="button" class="tarjeta-estructura tarjeta-arbol-binario-busqueda" data-panel="panel-arbol-binario-busqueda">
+                        <small class="tarjeta-numero">08</small>
+                        <span class="tarjeta-emblema"><span class="tarjeta-icono">🔍</span></span>
+                        <h3 class="tarjeta-nombre">Árbol binario de búsqueda</h3>
+                        <em class="tarjeta-indicacion">Toca para explorar</em>
+                    </button>
+                    <div class="panel-fondo panel-fondo-arbol-binario-busqueda" id="panel-arbol-binario-busqueda">
+                        <div class="panel-contenido panel-contenido-arbol-binario-busqueda">
+                            <button type="button" class="boton-cerrar-panel boton-cerrar-arbol-binario-busqueda" aria-label="Cerrar">✕</button>
+                            <button onclick="cambiarIdiomaArbolBinarioBusqueda()" type="button" class="boton-nombre boton-nombre-arbol-binario-busqueda"><span class="titulo-arbol-binario-busqueda">Árbol binario de búsqueda</span></button>
+                            <button onclick="mostrarQueEsArbolBinarioBusqueda()" type="button" class="boton-texto boton-que-es-arbol-binario-busqueda">¿Qué es?</button>
+                            <p class="texto-revelado que-es-arbol-binario-busqueda"></p>
+                            <button onclick="mostrarExtraArbolBinarioBusqueda()" type="button" class="boton-texto boton-extra-arbol-binario-busqueda">Tiene una regla:</button>
+                            <p class="texto-revelado extra-arbol-binario-busqueda"></p>
+                            <button onclick="cambiarImagenArbolBinarioBusqueda()" type="button" class="boton-imagen boton-imagen-arbol-binario-busqueda"><img src="https://cdn.phototourl.com/member/2026-11-12-c3d5f510-59fe-4696-a616-d0f0d0354ce3.png" class="imagen-arbol-binario-busqueda" alt="Árbol binario de búsqueda"></button>
+                            <button onclick="mostrarParaQueSirveArbolBinarioBusqueda()" type="button" class="boton-texto boton-para-que-sirve-arbol-binario-busqueda">¿Para qué sirve?</button>
+                            <p class="texto-revelado para-que-sirve-arbol-binario-busqueda"></p>
+                            <button onclick="mostrarCuandoSeUtilizaArbolBinarioBusqueda()" type="button" class="boton-texto boton-cuando-se-utiliza-arbol-binario-busqueda">¿Cuándo se utiliza?</button>
+                            <p class="texto-revelado cuando-se-utiliza-arbol-binario-busqueda"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="estructura estructura-grafos" style="--acento:hsl(214 95% 60%);--orden:8">
+                    <button type="button" class="tarjeta-estructura tarjeta-grafos" data-panel="panel-grafos">
+                        <small class="tarjeta-numero">09</small>
+                        <span class="tarjeta-emblema"><span class="tarjeta-icono">🕸️</span></span>
+                        <h3 class="tarjeta-nombre">Grafos</h3>
+                        <em class="tarjeta-indicacion">Toca para explorar</em>
+                    </button>
+                    <div class="panel-fondo panel-fondo-grafos" id="panel-grafos">
+                        <div class="panel-contenido panel-contenido-grafos">
+                            <button type="button" class="boton-cerrar-panel boton-cerrar-grafos" aria-label="Cerrar">✕</button>
+                            <button onclick="cambiarIdiomaGrafos()" type="button" class="boton-nombre boton-nombre-grafos"><span class="titulo-grafos">Grafos</span></button>
+                            <button onclick="mostrarQueEsGrafos()" type="button" class="boton-texto boton-que-es-grafos">¿Qué es?</button>
+                            <p class="texto-revelado que-es-grafos"></p>
+                            <button onclick="mostrarExtraGrafos()" type="button" class="boton-texto boton-extra-grafos">A-B-C-D</button>
+                            <button onclick="cambiarImagenGrafos()" type="button" class="boton-imagen boton-imagen-grafos"><img src="https://cdn.phototourl.com/member/2026-11-12-3bf19656-92f2-4889-9c76-cde9df37611f.png" class="imagen-grafos" alt="Grafos"></button>
+                            <button onclick="mostrarParaQueSirveGrafos()" type="button" class="boton-texto boton-para-que-sirve-grafos">¿Para qué sirve?</button>
+                            <p class="texto-revelado para-que-sirve-grafos"></p>
+                            <button onclick="mostrarCuandoSeUtilizaGrafos()" type="button" class="boton-texto boton-cuando-se-utiliza-grafos">¿Cuándo se utiliza?</button>
+                            <p class="texto-revelado cuando-se-utiliza-grafos"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="estructura estructura-monticulo" style="--acento:hsl(217 95% 60%);--orden:9">
+                    <button type="button" class="tarjeta-estructura tarjeta-monticulo" data-panel="panel-monticulo">
+                        <small class="tarjeta-numero">10</small>
+                        <span class="tarjeta-emblema"><span class="tarjeta-icono">⛰️</span></span>
+                        <h3 class="tarjeta-nombre">Montículo</h3>
+                        <em class="tarjeta-indicacion">Toca para explorar</em>
+                    </button>
+                    <div class="panel-fondo panel-fondo-monticulo" id="panel-monticulo">
+                        <div class="panel-contenido panel-contenido-monticulo">
+                            <button type="button" class="boton-cerrar-panel boton-cerrar-monticulo" aria-label="Cerrar">✕</button>
+                            <button onclick="cambiarIdiomaMonticulo()" type="button" class="boton-nombre boton-nombre-monticulo"><span class="titulo-monticulo">Montículo</span></button>
+                            <button onclick="mostrarQueEsMonticulo()" type="button" class="boton-texto boton-que-es-monticulo">¿Qué es?</button>
+                            <p class="texto-revelado que-es-monticulo"></p>
+                            <button onclick="mostrarExtraMonticulo()" type="button" class="boton-texto boton-extra-monticulo"><strong class="extra-monticulo">Existen 2 tipos:</strong></button>
+                            <button onclick="cambiarImagenMonticulo()" type="button" class="boton-imagen boton-imagen-monticulo"><img src="https://cdn.phototourl.com/member/2026-11-12-0d1c369b-d2b8-4032-aa43-febbde8dba77.png" class="imagen-monticulo" alt="Montículo"></button>
+                            <button onclick="mostrarParaQueSirveMonticulo()" type="button" class="boton-texto boton-para-que-sirve-monticulo">¿Para qué sirve?</button>
+                            <p class="texto-revelado para-que-sirve-monticulo"></p>
+                            <button onclick="mostrarCuandoSeUtilizaMonticulo()" type="button" class="boton-texto boton-cuando-se-utiliza-monticulo">¿Cuándo se utiliza?</button>
+                            <p class="texto-revelado cuando-se-utiliza-monticulo"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="pie-pagina">
+            <a href="#inicio" class="enlace-volver-arriba">Volver arriba ↑</a>
+            <p>&copy; 2026 Bases de Datos. Todos los derechos reservados. EUGV.</p>
+        </footer>
+        <script src="app.js"></script>
+        <script src="tarjetas.js"></script>
+    </body>
+</html>
