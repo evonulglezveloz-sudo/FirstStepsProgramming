@@ -1,0 +1,560 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto+Mono:wght@300;400;500&display=swap");
+
+/* Estilo inspirado en las peliculas de "Iron Man" */
+:root {
+  --void: #02070d;
+  --deep: #061423;
+  --arc: #1b8fd1;
+  --cyan: #35d6ff;
+  --ice: #bdf3ff;
+  --gold: #ffb347;
+  --red: #ff4b3e;
+  --line: rgba(53, 214, 255, 0.28);
+  --glow: 0 0 12px rgba(53, 214, 255, 0.55), 0 0 36px rgba(27, 143, 209, 0.35);
+
+  --hud: clamp(200px, min(78vw, 50vh), 620px);
+  --boot: 3.2s; /* duración de la secuencia de arranque */
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--void);
+  color: var(--ice);
+  font-family: "Roboto Mono", monospace;
+  overflow-x: hidden;
+}
+
+/* ---------- Escenario ---------- */
+.main {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 3.5vh, 28px);
+  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+    max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 42%, rgba(27, 143, 209, 0.28), transparent 70%),
+    radial-gradient(ellipse at 50% 120%, rgba(53, 214, 255, 0.18), transparent 55%),
+    linear-gradient(180deg, #030a12 0%, var(--deep) 55%, #020509 100%);
+}
+
+/* Rejilla técnica + líneas de escaneo */
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, rgba(189, 243, 255, 0.035) 0 1px, transparent 1px 3px),
+    linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 64px 64px;
+  opacity: 0.35;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 20%, transparent 75%);
+  animation: fade-in 1.2s ease-out calc(var(--boot) - 0.6s) both;
+}
+
+/* Viñeta */
+.main::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+/* ---------- Contenedor central ---------- */
+.main .image-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---------- HUD (anillos + imagen) ---------- */
+.main .image-container .image {
+  position: relative;
+  width: var(--hud);
+  height: var(--hud);
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+
+/* Cono de luz proyectado hacia el globo */
+.main .image-container .image::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6%;
+  width: 46%;
+  height: 52%;
+  transform: translateX(-50%);
+  background: linear-gradient(0deg, rgba(53, 214, 255, 0.55), transparent 85%);
+  clip-path: polygon(38% 100%, 62% 100%, 100% 0, 0 0);
+  filter: blur(6px);
+  opacity: 0;
+  animation: beam 1.4s ease-out calc(var(--boot) + 0.1s) forwards;
+}
+
+/* Imagen central: disco holográfico */
+.main .image-container .image img {
+  position: relative;
+  z-index: 2;
+  width: 56%;
+  height: 56%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--cyan);
+  box-shadow: var(--glow), inset 0 0 40px rgba(53, 214, 255, 0.35);
+  opacity: 0;
+  animation: core-on 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) var(--boot) forwards,
+    core-pulse 4s ease-in-out calc(var(--boot) + 1.8s) infinite;
+}
+
+/* Anillos */
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Anillo exterior con marcas de reloj */
+.ring-ticks {
+  border: 1px solid var(--line);
+  animation: ring-in 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--boot) - 0.2s) forwards;
+}
+.ring-ticks::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, var(--cyan) 0 0.6deg, transparent 0.6deg 6deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 9px), #000 calc(100% - 9px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 9px), #000 calc(100% - 9px));
+  opacity: 0.8;
+}
+
+/* Arcos gruesos que giran */
+.ring-arcs {
+  inset: 7%;
+  background: conic-gradient(
+    from 10deg,
+    var(--arc) 0 62deg,
+    transparent 62deg 92deg,
+    var(--cyan) 92deg 150deg,
+    transparent 150deg 200deg,
+    var(--arc) 200deg 262deg,
+    transparent 262deg 300deg,
+    var(--cyan) 300deg 336deg,
+    transparent 336deg 360deg
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 7px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 7px));
+  filter: drop-shadow(0 0 6px rgba(53, 214, 255, 0.6));
+  animation: ring-in 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--boot) + 0.1s) forwards,
+    spin 28s linear calc(var(--boot) + 1.7s) infinite;
+}
+
+/* Anillo medio, giro inverso, discontinuo */
+.ring-dash {
+  inset: 15%;
+  border: 2px dashed rgba(189, 243, 255, 0.55);
+  animation: ring-in 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--boot) + 0.25s) forwards,
+    spin-rev 40s linear calc(var(--boot) + 1.85s) infinite;
+}
+
+/* Anillo interior fino con acento dorado (guiño al traje) */
+.ring-core {
+  inset: 21%;
+  border: 1px solid var(--cyan);
+  box-shadow: 0 0 18px rgba(53, 214, 255, 0.4), inset 0 0 18px rgba(53, 214, 255, 0.25);
+  animation: ring-in 1.4s ease-out calc(var(--boot) + 0.4s) forwards;
+}
+.ring-core::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 10px var(--gold);
+}
+
+/* Barrido de radar sobre el globo */
+.ring-sweep {
+  inset: 15%;
+  background: conic-gradient(from 0deg, rgba(53, 214, 255, 0.28), transparent 55deg, transparent 360deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent 38%, #000 39%);
+  mask: radial-gradient(farthest-side, transparent 38%, #000 39%);
+  animation: fade-in 1s ease-out calc(var(--boot) + 1.2s) forwards,
+    spin 6s linear calc(var(--boot) + 1.2s) infinite;
+}
+
+/* ---------- Títulos ---------- */
+.main .image-container h1 {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-size: clamp(28px, 6vw, 46px);
+  letter-spacing: 0.45em;
+  padding-left: 0.45em; /* compensa el espaciado final para centrar */
+  color: var(--cyan);
+  text-shadow: 0 0 10px rgba(53, 214, 255, 0.8), 0 0 34px rgba(27, 143, 209, 0.7);
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: title-in 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) calc(var(--boot) + 0.9s) forwards;
+}
+
+.main .image-container p {
+  max-width: 46ch;
+  font-size: clamp(12px, 2.6vw, 14px);
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: rgba(189, 243, 255, 0.72);
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 0;
+  border-right: 2px solid var(--cyan);
+  margin: 0 auto;
+  animation: typing 2.4s steps(52, end) calc(var(--boot) + 1.7s) forwards,
+    caret 0.8s step-end calc(var(--boot) + 1.7s) 5,
+    caret-off 0s linear calc(var(--boot) + 5.8s) forwards;
+}
+
+/* ---------- Panel del botón ---------- */
+.main .input {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min(420px, 88vw);
+  height: 58px;
+  background: linear-gradient(90deg, rgba(27, 143, 209, 0.08), rgba(53, 214, 255, 0.2), rgba(27, 143, 209, 0.08));
+  border: 1px solid var(--line);
+  clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
+  opacity: 0;
+  transform: translateY(14px);
+  animation: panel-in 0.9s ease-out calc(var(--boot) + 3.4s) forwards;
+}
+
+/* Soportes de esquina dorados */
+.main .input::before,
+.main .input::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  border: 2px solid var(--gold);
+}
+.main .input::before {
+  top: 0;
+  left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+.main .input::after {
+  bottom: 0;
+  right: 0;
+  border-left: 0;
+  border-top: 0;
+}
+
+.main .input .talk {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+/* Indicador de estado (reactor en miniatura) */
+.main .input .talk::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan);
+  animation: core-pulse 2.4s ease-in-out infinite;
+}
+
+.main .input .talk i {
+  font-size: 20px;
+  color: var(--ice);
+}
+
+.main .input .content {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: var(--ice);
+  text-shadow: 0 0 8px rgba(53, 214, 255, 0.7);
+  margin: 0;
+}
+
+@media (hover: hover) {
+  .main .input .talk:hover {
+    background: rgba(53, 214, 255, 0.14);
+    box-shadow: inset 0 0 26px rgba(53, 214, 255, 0.3);
+  }
+}
+.main .input .talk:active {
+  background: rgba(53, 214, 255, 0.26);
+}
+.main .input .talk:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--gold);
+}
+
+/* Estado "escuchando": añade la clase .listening al botón desde app.js */
+.main .input .talk.listening::before {
+  background: var(--red);
+  box-shadow: 0 0 12px var(--red);
+  animation: core-pulse 0.7s ease-in-out infinite;
+}
+
+/* ---------- Secuencia de arranque ---------- */
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0 max(8vw, 24px);
+  background: #000;
+  font-family: "Roboto Mono", monospace;
+  font-size: clamp(11px, 2.4vw, 14px);
+  color: var(--cyan);
+  pointer-events: none;
+  animation: boot-out 0.7s ease-in calc(var(--boot) - 0.7s) forwards;
+}
+.boot span {
+  opacity: 0;
+  text-shadow: 0 0 8px rgba(53, 214, 255, 0.7);
+  animation: fade-in 0.01s linear forwards;
+}
+.boot span:nth-child(1) { animation-delay: 0.2s; }
+.boot span:nth-child(2) { animation-delay: 0.7s; }
+.boot span:nth-child(3) { animation-delay: 1.2s; }
+.boot span:nth-child(4) { animation-delay: 1.7s; }
+.boot span:nth-child(5) { animation-delay: 2.2s; color: var(--gold); }
+
+.boot::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  box-shadow: 0 0 18px var(--cyan);
+  animation: scan 1.6s ease-in-out infinite;
+}
+
+/* ---------- Animaciones ---------- */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes boot-out {
+  to { opacity: 0; visibility: hidden; }
+}
+@keyframes scan {
+  from { top: 0; }
+  to { top: 100%; }
+}
+@keyframes ring-in {
+  from { opacity: 0; transform: scale(0.55) rotate(-90deg); }
+  to { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-rev {
+  to { transform: rotate(-360deg); }
+}
+@keyframes core-on {
+  0% { opacity: 0; transform: scale(0.3); filter: brightness(3); }
+  60% { opacity: 1; filter: brightness(1.8); }
+  100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+}
+@keyframes core-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+@keyframes beam {
+  to { opacity: 0.8; }
+}
+@keyframes title-in {
+  from { opacity: 0; letter-spacing: 1.2em; filter: blur(10px); }
+  to { opacity: 1; letter-spacing: 0.45em; filter: blur(0); }
+}
+@keyframes typing {
+  to { max-width: 46ch; }
+}
+@keyframes caret {
+  50% { border-color: transparent; }
+}
+@keyframes caret-off {
+  to { border-color: transparent; }
+}
+@keyframes panel-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+
+/* Botón cómodo al tacto (mínimo ~48px de alto) */
+@media (pointer: coarse) {
+  .main .input { height: 60px; }
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 520px) {
+  .main .image-container h1 {
+    letter-spacing: 0.3em;
+    padding-left: 0.3em;
+  }
+  .main .image-container p {
+    white-space: normal;
+    border-right: 0;
+    max-width: 34ch;
+    animation: fade-in 1s ease-out calc(var(--boot) + 1.7s) forwards;
+    opacity: 0;
+  }
+  .main .input .content {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+  }
+}
+
+/* ---------- Teléfonos muy pequeños ---------- */
+@media (max-width: 360px) {
+  .boot { padding: 0 16px; font-size: 10.5px; }
+  .main .image-container h1 { font-size: 24px; letter-spacing: 0.22em; padding-left: 0.22em; }
+  .main .input { width: 94vw; }
+  .main .input .content { font-size: 10px; letter-spacing: 0.12em; }
+  .ring-ticks::before { inset: 4px; }
+}
+
+/* ---------- Tablets ---------- */
+@media (min-width: 768px) and (max-width: 1199px) {
+  :root { --hud: clamp(300px, min(66vw, 54vh), 560px); }
+  .main .input { width: min(460px, 60vw); }
+}
+
+/* ---------- Escritorio grande / TV ---------- */
+@media (min-width: 1600px) {
+  :root { --hud: clamp(420px, min(40vw, 62vh), 760px); }
+  .main .image-container h1 { font-size: 56px; }
+  .main .image-container p { font-size: 17px; max-width: 52ch; }
+  @keyframes typing { to { max-width: 52ch; } }
+  .main .input { width: 520px; height: 68px; }
+  .main .input .content { font-size: 15px; }
+}
+@media (min-width: 2400px) {
+  :root { --hud: clamp(560px, min(34vw, 66vh), 980px); }
+  .main .image-container h1 { font-size: 76px; }
+  .main .image-container p { font-size: 22px; }
+  .main .input { width: 680px; height: 84px; }
+  .main .input .content { font-size: 19px; }
+}
+
+/* ---------- Horizontal con poca altura (móvil de lado) ---------- */
+@media (orientation: landscape) and (max-height: 520px) {
+  :root { --hud: min(78vh, 46vw); }
+
+  .main {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: 1fr auto auto auto 1fr;
+    gap: 10px clamp(16px, 4vw, 48px);
+    align-items: center;
+    justify-items: center;
+  }
+  .main .image-container { display: contents; }
+  .main .image-container .image { grid-column: 1; grid-row: 1 / -1; margin: 0; }
+  .main .image-container h1 {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: clamp(20px, 5vh, 32px);
+    margin: 0;
+  }
+  .main .image-container p {
+    grid-column: 2;
+    grid-row: 3;
+    white-space: normal;
+    border-right: 0;
+    max-width: 38ch;
+    margin: 0;
+    animation: fade-in 1s ease-out calc(var(--boot) + 1.7s) forwards;
+    opacity: 0;
+  }
+  .main .input { grid-column: 2; grid-row: 4; width: min(340px, 100%); height: 52px; }
+  .boot { gap: 6px; font-size: 11px; }
+}
+
+/* ---------- Pantallas muy bajas (ventanas pequeñas) ---------- */
+@media (max-height: 380px) {
+  .main .image-container .image::before { display: none; }
+}
+
+/* ---------- Accesibilidad: sin movimiento ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .boot { display: none; }
+  .main::before,
+  .main .image-container .image::before,
+  .main .image-container .image img,
+  .ring,
+  .main .image-container h1,
+  .main .image-container p,
+  .main .input {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+  .main .image-container p { max-width: 46ch; border-right: 0; }
+  .main .image-container .image::before { opacity: 0.8; }
+  .main .input .talk::before { animation: none; }
+}
