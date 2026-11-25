@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  background-color: white;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.contenedor-diagramas {
+  width: 90%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.inciso {
+  margin-bottom: 30px;
+}
+
+.diagrama {
+  margin: 0;
+}
+
+.diagrama-venn {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Fondo y formas */
+
+.universo {
+  fill: #f1f5fb;
+}
+
+.conjunto {
+  fill: white;
+}
+
+.conjunto-tapa {
+  fill: white;
+}
+
+.zona-resaltada {
+  fill: #6ea8fe;
+}
+
+.borde {
+  fill: none;
+  stroke-width: 2.6;
+}
+
+.borde-a {
+  stroke: #8b5cf6;
+}
+
+.borde-b {
+  stroke: #14b8a6;
+}
+
+.borde-c {
+  stroke: #f59e0b;
+}
+
+/* Textos */
+
+.elementos text {
+  font-size: 12px;
+  font-weight: bold;
+  fill: #1e293b;
+  text-anchor: middle;
+}
+
+.nombre-conjunto {
+  font-size: 17px;
+  font-weight: bold;
+  text-anchor: middle;
+}
+
+.nombre-a {
+  fill: #8b5cf6;
+}
+
+.nombre-b {
+  fill: #14b8a6;
+}
+
+.nombre-c {
+  fill: #f59e0b;
+}
+
+.nombre-universo {
+  font-size: 14px;
+  font-weight: bold;
+  fill: #64748b;
+}
