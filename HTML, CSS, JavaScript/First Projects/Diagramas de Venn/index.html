@@ -1,395 +1,409 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R3. Diagramas de Venn</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <main class="contenedor-diagramas">
-    <section class="inciso" id="inciso-a">
-      <figure class="diagrama" id="diagrama-a">
-        <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-a">
-          <title id="titulo-a">Diagrama de Venn: B ∩ C</title>
-          <defs>
-            <clipPath id="recorte-circulo-c-a">
-              <circle cx="185" cy="165" r="75" />
-            </clipPath>
-          </defs>
-          <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
-          <circle class="conjunto conjunto-a-relleno" cx="132" cy="95" r="75" />
-          <circle class="conjunto conjunto-b-relleno" cx="237" cy="95" r="75" />
-          <circle class="conjunto conjunto-c-relleno" cx="185" cy="165" r="75" />
-          <circle class="zona-resaltada" cx="237" cy="95" r="75" clip-path="url(#recorte-circulo-c-a)" />
-          <circle class="borde borde-a" cx="132" cy="95" r="75" />
-          <circle class="borde borde-b" cx="237" cy="95" r="75" />
-          <circle class="borde borde-c" cx="185" cy="165" r="75" />
-          <g class="elementos elementos-solo-a">
-            <text x="100" y="75" dy=".35em">12</text>
-            <text x="100" y="93" dy=".35em">14</text>
-          </g>
-          <g class="elementos elementos-solo-b">
-            <text x="270" y="75" dy=".35em">3</text>
-            <text x="270" y="93" dy=".35em">5</text>
-          </g>
-          <g class="elementos elementos-solo-c">
-            <text x="172" y="207" dy=".35em">7</text>
-            <text x="198" y="207" dy=".35em">11</text>
-          </g>
-          <g class="elementos elementos-a-y-b">
-            <text x="185" y="60" dy=".35em">8</text>
-          </g>
-          <g class="elementos elementos-a-y-c">
-            <text x="128" y="140" dy=".35em">4</text>
-            <text x="148" y="140" dy=".35em">6</text>
-            <text x="138" y="157" dy=".35em">10</text>
-          </g>
-          <g class="elementos elementos-b-y-c">
-            <text x="222" y="148" dy=".35em">1</text>
-            <text x="244" y="148" dy=".35em">13</text>
-          </g>
-          <g class="elementos elementos-a-b-c">
-            <text x="185" y="120" dy=".35em">2</text>
-          </g>
-          <g class="elementos elementos-fuera">
-            <text x="-28" y="230" dy=".35em">9</text>
-          </g>
-          <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
-          <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
-          <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
-          <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
-        </svg>
-      </figure>
-    </section>
-    <section class="inciso" id="inciso-b">
-      <figure class="diagrama" id="diagrama-b">
-        <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-b">
-          <title id="titulo-b">Diagrama de Venn: C′</title>
-          <defs>
-            <clipPath id="recorte-circulo-c-b">
-              <circle cx="185" cy="165" r="75" />
-            </clipPath>
-          </defs>
-          <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
-          <circle class="conjunto conjunto-a-relleno" cx="132" cy="95" r="75" />
-          <circle class="conjunto conjunto-b-relleno" cx="237" cy="95" r="75" />
-          <circle class="conjunto conjunto-c-relleno" cx="185" cy="165" r="75" />
-          <rect class="zona-resaltada" x="-60" y="8" width="490" height="244" rx="14" />
-          <circle class="conjunto-tapa" cx="185" cy="165" r="75" />
-          <circle class="borde borde-a" cx="132" cy="95" r="75" />
-          <circle class="borde borde-b" cx="237" cy="95" r="75" />
-          <circle class="borde borde-c" cx="185" cy="165" r="75" />
-          <g class="elementos elementos-solo-a">
-            <text x="100" y="75" dy=".35em">12</text>
-            <text x="100" y="93" dy=".35em">14</text>
-          </g>
-          <g class="elementos elementos-solo-b">
-            <text x="270" y="75" dy=".35em">3</text>
-            <text x="270" y="93" dy=".35em">5</text>
-          </g>
-          <g class="elementos elementos-solo-c">
-            <text x="172" y="207" dy=".35em">7</text>
-            <text x="198" y="207" dy=".35em">11</text>
-          </g>
-          <g class="elementos elementos-a-y-b">
-            <text x="185" y="60" dy=".35em">8</text>
-          </g>
-          <g class="elementos elementos-a-y-c">
-            <text x="128" y="140" dy=".35em">4</text>
-            <text x="148" y="140" dy=".35em">6</text>
-            <text x="138" y="157" dy=".35em">10</text>
-          </g>
-          <g class="elementos elementos-b-y-c">
-            <text x="222" y="148" dy=".35em">1</text>
-            <text x="244" y="148" dy=".35em">13</text>
-          </g>
-          <g class="elementos elementos-a-b-c">
-            <text x="185" y="120" dy=".35em">2</text>
-          </g>
-          <g class="elementos elementos-fuera">
-            <text x="-28" y="230" dy=".35em">9</text>
-          </g>
-          <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
-          <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
-          <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
-          <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
-        </svg>
-      </figure>
-    </section>
-    <section class="inciso" id="inciso-c">
-      <figure class="diagrama" id="diagrama-c">
-        <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-c">
-          <title id="titulo-c">Diagrama de Venn: B ∪ C</title>
-          <defs>
-            <clipPath id="recorte-circulo-c-c">
-              <circle cx="185" cy="165" r="75" />
-            </clipPath>
-          </defs>
-          <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
-          <circle class="conjunto conjunto-a-relleno" cx="132" cy="95" r="75" />
-          <circle class="conjunto conjunto-b-relleno" cx="237" cy="95" r="75" />
-          <circle class="conjunto conjunto-c-relleno" cx="185" cy="165" r="75" />
-          <circle class="zona-resaltada" cx="237" cy="95" r="75" />
-          <circle class="zona-resaltada" cx="185" cy="165" r="75" />
-          <circle class="borde borde-a" cx="132" cy="95" r="75" />
-          <circle class="borde borde-b" cx="237" cy="95" r="75" />
-          <circle class="borde borde-c" cx="185" cy="165" r="75" />
-          <g class="elementos elementos-solo-a">
-            <text x="100" y="75" dy=".35em">12</text>
-            <text x="100" y="93" dy=".35em">14</text>
-          </g>
-          <g class="elementos elementos-solo-b">
-            <text x="270" y="75" dy=".35em">3</text>
-            <text x="270" y="93" dy=".35em">5</text>
-          </g>
-          <g class="elementos elementos-solo-c">
-            <text x="172" y="207" dy=".35em">7</text>
-            <text x="198" y="207" dy=".35em">11</text>
-          </g>
-          <g class="elementos elementos-a-y-b">
-            <text x="185" y="60" dy=".35em">8</text>
-          </g>
-          <g class="elementos elementos-a-y-c">
-            <text x="128" y="140" dy=".35em">4</text>
-            <text x="148" y="140" dy=".35em">6</text>
-            <text x="138" y="157" dy=".35em">10</text>
-          </g>
-          <g class="elementos elementos-b-y-c">
-            <text x="222" y="148" dy=".35em">1</text>
-            <text x="244" y="148" dy=".35em">13</text>
-          </g>
-          <g class="elementos elementos-a-b-c">
-            <text x="185" y="120" dy=".35em">2</text>
-          </g>
-          <g class="elementos elementos-fuera">
-            <text x="-28" y="230" dy=".35em">9</text>
-          </g>
-          <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
-          <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
-          <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
-          <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
-        </svg>
-      </figure>
-    </section>
-    <section class="inciso" id="inciso-d">
-      <figure class="diagrama" id="diagrama-d">
-        <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-d">
-          <title id="titulo-d">Diagrama de Venn: A ∩ C</title>
-          <defs>
-            <clipPath id="recorte-circulo-c-d">
-              <circle cx="185" cy="165" r="75" />
-            </clipPath>
-          </defs>
-          <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
-          <circle class="conjunto conjunto-a-relleno" cx="132" cy="95" r="75" />
-          <circle class="conjunto conjunto-b-relleno" cx="237" cy="95" r="75" />
-          <circle class="conjunto conjunto-c-relleno" cx="185" cy="165" r="75" />
-          <circle class="zona-resaltada" cx="132" cy="95" r="75" clip-path="url(#recorte-circulo-c-d)" />
-          <circle class="borde borde-a" cx="132" cy="95" r="75" />
-          <circle class="borde borde-b" cx="237" cy="95" r="75" />
-          <circle class="borde borde-c" cx="185" cy="165" r="75" />
-          <g class="elementos elementos-solo-a">
-            <text x="100" y="75" dy=".35em">12</text>
-            <text x="100" y="93" dy=".35em">14</text>
-          </g>
-          <g class="elementos elementos-solo-b">
-            <text x="270" y="75" dy=".35em">3</text>
-            <text x="270" y="93" dy=".35em">5</text>
-          </g>
-          <g class="elementos elementos-solo-c">
-            <text x="172" y="207" dy=".35em">7</text>
-            <text x="198" y="207" dy=".35em">11</text>
-          </g>
-          <g class="elementos elementos-a-y-b">
-            <text x="185" y="60" dy=".35em">8</text>
-          </g>
-          <g class="elementos elementos-a-y-c">
-            <text x="128" y="140" dy=".35em">4</text>
-            <text x="148" y="140" dy=".35em">6</text>
-            <text x="138" y="157" dy=".35em">10</text>
-          </g>
-          <g class="elementos elementos-b-y-c">
-            <text x="222" y="148" dy=".35em">1</text>
-            <text x="244" y="148" dy=".35em">13</text>
-          </g>
-          <g class="elementos elementos-a-b-c">
-            <text x="185" y="120" dy=".35em">2</text>
-          </g>
-          <g class="elementos elementos-fuera">
-            <text x="-28" y="230" dy=".35em">9</text>
-          </g>
-          <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
-          <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
-          <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
-          <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
-        </svg>
-      </figure>
-    </section>
-    <section class="inciso" id="inciso-e">
-      <figure class="diagrama" id="diagrama-e">
-        <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-e">
-          <title id="titulo-e">Diagrama de Venn: A′</title>
-          <defs>
-            <clipPath id="recorte-circulo-c-e">
-              <circle cx="185" cy="165" r="75" />
-            </clipPath>
-          </defs>
-          <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
-          <circle class="conjunto conjunto-a-relleno" cx="132" cy="95" r="75" />
-          <circle class="conjunto conjunto-b-relleno" cx="237" cy="95" r="75" />
-          <circle class="conjunto conjunto-c-relleno" cx="185" cy="165" r="75" />
-          <rect class="zona-resaltada" x="-60" y="8" width="490" height="244" rx="14" />
-          <circle class="conjunto-tapa" cx="132" cy="95" r="75" />
-          <circle class="borde borde-a" cx="132" cy="95" r="75" />
-          <circle class="borde borde-b" cx="237" cy="95" r="75" />
-          <circle class="borde borde-c" cx="185" cy="165" r="75" />
-          <g class="elementos elementos-solo-a">
-            <text x="100" y="75" dy=".35em">12</text>
-            <text x="100" y="93" dy=".35em">14</text>
-          </g>
-          <g class="elementos elementos-solo-b">
-            <text x="270" y="75" dy=".35em">3</text>
-            <text x="270" y="93" dy=".35em">5</text>
-          </g>
-          <g class="elementos elementos-solo-c">
-            <text x="172" y="207" dy=".35em">7</text>
-            <text x="198" y="207" dy=".35em">11</text>
-          </g>
-          <g class="elementos elementos-a-y-b">
-            <text x="185" y="60" dy=".35em">8</text>
-          </g>
-          <g class="elementos elementos-a-y-c">
-            <text x="128" y="140" dy=".35em">4</text>
-            <text x="148" y="140" dy=".35em">6</text>
-            <text x="138" y="157" dy=".35em">10</text>
-          </g>
-          <g class="elementos elementos-b-y-c">
-            <text x="222" y="148" dy=".35em">1</text>
-            <text x="244" y="148" dy=".35em">13</text>
-          </g>
-          <g class="elementos elementos-a-b-c">
-            <text x="185" y="120" dy=".35em">2</text>
-          </g>
-          <g class="elementos elementos-fuera">
-            <text x="-28" y="230" dy=".35em">9</text>
-          </g>
-          <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
-          <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
-          <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
-          <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
-        </svg>
-      </figure>
-    </section>
-    <section class="inciso" id="inciso-f">
-      <figure class="diagrama" id="diagrama-f">
-        <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-f">
-          <title id="titulo-f">Diagrama de Venn: B − A</title>
-          <defs>
-            <clipPath id="recorte-circulo-c-f">
-              <circle cx="185" cy="165" r="75" />
-            </clipPath>
-          </defs>
-          <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
-          <circle class="conjunto conjunto-a-relleno" cx="132" cy="95" r="75" />
-          <circle class="conjunto conjunto-b-relleno" cx="237" cy="95" r="75" />
-          <circle class="conjunto conjunto-c-relleno" cx="185" cy="165" r="75" />
-          <circle class="zona-resaltada" cx="237" cy="95" r="75" />
-          <circle class="conjunto-tapa" cx="132" cy="95" r="75" />
-          <circle class="borde borde-a" cx="132" cy="95" r="75" />
-          <circle class="borde borde-b" cx="237" cy="95" r="75" />
-          <circle class="borde borde-c" cx="185" cy="165" r="75" />
-          <g class="elementos elementos-solo-a">
-            <text x="100" y="75" dy=".35em">12</text>
-            <text x="100" y="93" dy=".35em">14</text>
-          </g>
-          <g class="elementos elementos-solo-b">
-            <text x="270" y="75" dy=".35em">3</text>
-            <text x="270" y="93" dy=".35em">5</text>
-          </g>
-          <g class="elementos elementos-solo-c">
-            <text x="172" y="207" dy=".35em">7</text>
-            <text x="198" y="207" dy=".35em">11</text>
-          </g>
-          <g class="elementos elementos-a-y-b">
-            <text x="185" y="60" dy=".35em">8</text>
-          </g>
-          <g class="elementos elementos-a-y-c">
-            <text x="128" y="140" dy=".35em">4</text>
-            <text x="148" y="140" dy=".35em">6</text>
-            <text x="138" y="157" dy=".35em">10</text>
-          </g>
-          <g class="elementos elementos-b-y-c">
-            <text x="222" y="148" dy=".35em">1</text>
-            <text x="244" y="148" dy=".35em">13</text>
-          </g>
-          <g class="elementos elementos-a-b-c">
-            <text x="185" y="120" dy=".35em">2</text>
-          </g>
-          <g class="elementos elementos-fuera">
-            <text x="-28" y="230" dy=".35em">9</text>
-          </g>
-          <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
-          <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
-          <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
-          <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
-        </svg>
-      </figure>
-    </section>
-    <section class="inciso" id="inciso-g">
-      <figure class="diagrama" id="diagrama-g">
-        <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-g">
-          <title id="titulo-g">Diagrama de Venn: C − B′</title>
-          <defs>
-            <clipPath id="recorte-circulo-c-g">
-              <circle cx="185" cy="165" r="75" />
-            </clipPath>
-          </defs>
-          <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
-          <circle class="conjunto conjunto-a-relleno" cx="132" cy="95" r="75" />
-          <circle class="conjunto conjunto-b-relleno" cx="237" cy="95" r="75" />
-          <circle class="conjunto conjunto-c-relleno" cx="185" cy="165" r="75" />
-          <circle class="zona-resaltada" cx="237" cy="95" r="75" clip-path="url(#recorte-circulo-c-g)" />
-          <circle class="borde borde-a" cx="132" cy="95" r="75" />
-          <circle class="borde borde-b" cx="237" cy="95" r="75" />
-          <circle class="borde borde-c" cx="185" cy="165" r="75" />
-          <g class="elementos elementos-solo-a">
-            <text x="100" y="75" dy=".35em">12</text>
-            <text x="100" y="93" dy=".35em">14</text>
-          </g>
-          <g class="elementos elementos-solo-b">
-            <text x="270" y="75" dy=".35em">3</text>
-            <text x="270" y="93" dy=".35em">5</text>
-          </g>
-          <g class="elementos elementos-solo-c">
-            <text x="172" y="207" dy=".35em">7</text>
-            <text x="198" y="207" dy=".35em">11</text>
-          </g>
-          <g class="elementos elementos-a-y-b">
-            <text x="185" y="60" dy=".35em">8</text>
-          </g>
-          <g class="elementos elementos-a-y-c">
-            <text x="128" y="140" dy=".35em">4</text>
-            <text x="148" y="140" dy=".35em">6</text>
-            <text x="138" y="157" dy=".35em">10</text>
-          </g>
-          <g class="elementos elementos-b-y-c">
-            <text x="222" y="148" dy=".35em">1</text>
-            <text x="244" y="148" dy=".35em">13</text>
-          </g>
-          <g class="elementos elementos-a-b-c">
-            <text x="185" y="120" dy=".35em">2</text>
-          </g>
-          <g class="elementos elementos-fuera">
-            <text x="-28" y="230" dy=".35em">9</text>
-          </g>
-          <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
-          <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
-          <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
-          <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
-        </svg>
-      </figure>
-    </section>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagramas de Venn</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="contenedor-diagramas">
+      <section class="inciso" id="inciso-a">
+        <figure class="diagrama" id="diagrama-a">
+          <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-a">
+            <title id="titulo-a">Diagrama de Venn: B ∩ C</title>
+            <defs>
+              <clipPath id="recorte-circulo-c-a">
+                <circle cx="185" cy="165" r="75" />
+              </clipPath>
+            </defs>
+            <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
+            <circle class="conjunto" cx="132" cy="95" r="75" />
+            <circle class="conjunto" cx="237" cy="95" r="75" />
+            <circle class="conjunto" cx="185" cy="165" r="75" />
+            <circle class="zona-resaltada" cx="237" cy="95" r="75" clip-path="url(#recorte-circulo-c-a)" />
+            <circle class="borde borde-a" cx="132" cy="95" r="75" />
+            <circle class="borde borde-b" cx="237" cy="95" r="75" />
+            <circle class="borde borde-c" cx="185" cy="165" r="75" />
+            <g class="elementos elementos-solo-a">
+              <text x="100" y="75" dy=".35em">12</text>
+              <text x="100" y="93" dy=".35em">14</text>
+            </g>
+            <g class="elementos elementos-solo-b">
+              <text x="270" y="75" dy=".35em">3</text>
+              <text x="270" y="93" dy=".35em">5</text>
+            </g>
+            <g class="elementos elementos-solo-c">
+              <text x="172" y="207" dy=".35em">7</text>
+              <text x="198" y="207" dy=".35em">11</text>
+            </g>
+            <g class="elementos elementos-a-y-b">
+              <text x="185" y="60" dy=".35em">8</text>
+            </g>
+            <g class="elementos elementos-a-y-c">
+              <text x="128" y="140" dy=".35em">4</text>
+              <text x="148" y="140" dy=".35em">6</text>
+              <text x="138" y="157" dy=".35em">10</text>
+            </g>
+            <g class="elementos elementos-b-y-c">
+              <text x="222" y="148" dy=".35em">1</text>
+              <text x="244" y="148" dy=".35em">13</text>
+            </g>
+            <g class="elementos elementos-a-b-c">
+              <text x="185" y="120" dy=".35em">2</text>
+            </g>
+            <g class="elementos elementos-fuera">
+              <text x="-28" y="230" dy=".35em">9</text>
+            </g>
+            <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
+            <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
+            <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
+            <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
+          </svg>
+        </figure>
+      </section>
+      <section class="inciso" id="inciso-b">
+        <figure class="diagrama" id="diagrama-b">
+          <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-b">
+            <title id="titulo-b">Diagrama de Venn: C′</title>
+            <defs>
+              <clipPath id="recorte-circulo-c-b">
+                <circle cx="185" cy="165" r="75" />
+              </clipPath>
+            </defs>
+            <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
+            <circle class="conjunto" cx="132" cy="95" r="75" />
+            <circle class="conjunto" cx="237" cy="95" r="75" />
+            <circle class="conjunto" cx="185" cy="165" r="75" />
+            <rect class="zona-resaltada" x="-60" y="8" width="490" height="244" rx="14" />
+            <circle class="conjunto-tapa" cx="185" cy="165" r="75" />
+            <circle class="borde borde-a" cx="132" cy="95" r="75" />
+            <circle class="borde borde-b" cx="237" cy="95" r="75" />
+            <circle class="borde borde-c" cx="185" cy="165" r="75" />
+            <g class="elementos elementos-solo-a">
+              <text x="100" y="75" dy=".35em">12</text>
+              <text x="100" y="93" dy=".35em">14</text>
+            </g>
+            <g class="elementos elementos-solo-b">
+              <text x="270" y="75" dy=".35em">3</text>
+              <text x="270" y="93" dy=".35em">5</text>
+            </g>
+            <g class="elementos elementos-solo-c">
+              <text x="172" y="207" dy=".35em">7</text>
+              <text x="198" y="207" dy=".35em">11</text>
+            </g>
+            <g class="elementos elementos-a-y-b">
+              <text x="185" y="60" dy=".35em">8</text>
+            </g>
+            <g class="elementos elementos-a-y-c">
+              <text x="128" y="140" dy=".35em">4</text>
+              <text x="148" y="140" dy=".35em">6</text>
+              <text x="138" y="157" dy=".35em">10</text>
+            </g>
+            <g class="elementos elementos-b-y-c">
+              <text x="222" y="148" dy=".35em">1</text>
+              <text x="244" y="148" dy=".35em">13</text>
+            </g>
+            <g class="elementos elementos-a-b-c">
+              <text x="185" y="120" dy=".35em">2</text>
+            </g>
+            <g class="elementos elementos-fuera">
+              <text x="-28" y="230" dy=".35em">9</text>
+            </g>
+            <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
+            <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
+            <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
+            <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
+          </svg>
+        </figure>
+      </section>
+      <section class="inciso" id="inciso-c">
+        <figure class="diagrama" id="diagrama-c">
+          <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-c">
+            <title id="titulo-c">Diagrama de Venn: B ∪ C</title>
+            <defs>
+              <clipPath id="recorte-circulo-c-c">
+                <circle cx="185" cy="165" r="75" />
+              </clipPath>
+            </defs>
+            <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
+            <circle class="conjunto" cx="132" cy="95" r="75" />
+            <circle class="conjunto" cx="237" cy="95" r="75" />
+            <circle class="conjunto" cx="185" cy="165" r="75" />
+            <circle class="zona-resaltada" cx="237" cy="95" r="75" />
+            <circle class="zona-resaltada" cx="185" cy="165" r="75" />
+            <circle class="borde borde-a" cx="132" cy="95" r="75" />
+            <circle class="borde borde-b" cx="237" cy="95" r="75" />
+            <circle class="borde borde-c" cx="185" cy="165" r="75" />
+            <g class="elementos elementos-solo-a">
+              <text x="100" y="75" dy=".35em">12</text>
+              <text x="100" y="93" dy=".35em">14</text>
+            </g>
+            <g class="elementos elementos-solo-b">
+              <text x="270" y="75" dy=".35em">3</text>
+              <text x="270" y="93" dy=".35em">5</text>
+            </g>
+            <g class="elementos elementos-solo-c">
+              <text x="172" y="207" dy=".35em">7</text>
+              <text x="198" y="207" dy=".35em">11</text>
+            </g>
+            <g class="elementos elementos-a-y-b">
+              <text x="185" y="60" dy=".35em">8</text>
+            </g>
+            <g class="elementos elementos-a-y-c">
+              <text x="128" y="140" dy=".35em">4</text>
+              <text x="148" y="140" dy=".35em">6</text>
+              <text x="138" y="157" dy=".35em">10</text>
+            </g>
+            <g class="elementos elementos-b-y-c">
+              <text x="222" y="148" dy=".35em">1</text>
+              <text x="244" y="148" dy=".35em">13</text>
+            </g>
+            <g class="elementos elementos-a-b-c">
+              <text x="185" y="120" dy=".35em">2</text>
+            </g>
+            <g class="elementos elementos-fuera">
+              <text x="-28" y="230" dy=".35em">9</text>
+            </g>
+            <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
+            <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
+            <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
+            <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
+          </svg>
+        </figure>
+      </section>
+      <section class="inciso" id="inciso-d">
+        <figure class="diagrama" id="diagrama-d">
+          <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-d">
+            <title id="titulo-d">Diagrama de Venn: A ∩ C</title>
+            <defs>
+              <clipPath id="recorte-circulo-c-d">
+                <circle cx="185" cy="165" r="75" />
+              </clipPath>
+            </defs>
+            <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
+            <circle class="conjunto" cx="132" cy="95" r="75" />
+            <circle class="conjunto" cx="237" cy="95" r="75" />
+            <circle class="conjunto" cx="185" cy="165" r="75" />
+            <circle class="zona-resaltada" cx="132" cy="95" r="75" clip-path="url(#recorte-circulo-c-d)" />
+            <circle class="borde borde-a" cx="132" cy="95" r="75" />
+            <circle class="borde borde-b" cx="237" cy="95" r="75" />
+            <circle class="borde borde-c" cx="185" cy="165" r="75" />
+            <g class="elementos elementos-solo-a">
+              <text x="100" y="75" dy=".35em">12</text>
+              <text x="100" y="93" dy=".35em">14</text>
+            </g>
+            <g class="elementos elementos-solo-b">
+              <text x="270" y="75" dy=".35em">3</text>
+              <text x="270" y="93" dy=".35em">5</text>
+            </g>
+            <g class="elementos elementos-solo-c">
+              <text x="172" y="207" dy=".35em">7</text>
+              <text x="198" y="207" dy=".35em">11</text>
+            </g>
+            <g class="elementos elementos-a-y-b">
+              <text x="185" y="60" dy=".35em">8</text>
+            </g>
+            <g class="elementos elementos-a-y-c">
+              <text x="128" y="140" dy=".35em">4</text>
+              <text x="148" y="140" dy=".35em">6</text>
+              <text x="138" y="157" dy=".35em">10</text>
+            </g>
+            <g class="elementos elementos-b-y-c">
+              <text x="222" y="148" dy=".35em">1</text>
+              <text x="244" y="148" dy=".35em">13</text>
+            </g>
+            <g class="elementos elementos-a-b-c">
+              <text x="185" y="120" dy=".35em">2</text>
+            </g>
+            <g class="elementos elementos-fuera">
+              <text x="-28" y="230" dy=".35em">9</text>
+            </g>
+            <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
+            <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
+            <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
+            <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
+          </svg>
+        </figure>
+      </section>
+      <section class="inciso" id="inciso-e">
+        <figure class="diagrama" id="diagrama-e">
+          <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-e">
+            <title id="titulo-e">Diagrama de Venn: A′</title>
+            <defs>
+              <clipPath id="recorte-circulo-c-e">
+                <circle cx="185" cy="165" r="75" />
+              </clipPath>
+            </defs>
+            <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
+            <circle class="conjunto" cx="132" cy="95" r="75" />
+            <circle class="conjunto" cx="237" cy="95" r="75" />
+            <circle class="conjunto" cx="185" cy="165" r="75" />
+            <rect class="zona-resaltada" x="-60" y="8" width="490" height="244" rx="14" />
+            <circle class="conjunto-tapa" cx="132" cy="95" r="75" />
+            <circle class="borde borde-a" cx="132" cy="95" r="75" />
+            <circle class="borde borde-b" cx="237" cy="95" r="75" />
+            <circle class="borde borde-c" cx="185" cy="165" r="75" />
+            <g class="elementos elementos-solo-a">
+              <text x="100" y="75" dy=".35em">12</text>
+              <text x="100" y="93" dy=".35em">14</text>
+            </g>
+            <g class="elementos elementos-solo-b">
+              <text x="270" y="75" dy=".35em">3</text>
+              <text x="270" y="93" dy=".35em">5</text>
+            </g>
+            <g class="elementos elementos-solo-c">
+              <text x="172" y="207" dy=".35em">7</text>
+              <text x="198" y="207" dy=".35em">11</text>
+            </g>
+            <g class="elementos elementos-a-y-b">
+              <text x="185" y="60" dy=".35em">8</text>
+            </g>
+            <g class="elementos elementos-a-y-c">
+              <text x="128" y="140" dy=".35em">4</text>
+              <text x="148" y="140" dy=".35em">6</text>
+              <text x="138" y="157" dy=".35em">10</text>
+            </g>
+            <g class="elementos elementos-b-y-c">
+              <text x="222" y="148" dy=".35em">1</text>
+              <text x="244" y="148" dy=".35em">13</text>
+            </g>
+            <g class="elementos elementos-a-b-c">
+              <text x="185" y="120" dy=".35em">2</text>
+            </g>
+            <g class="elementos elementos-fuera">
+              <text x="-28" y="230" dy=".35em">9</text>
+            </g>
+            <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
+            <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
+            <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
+            <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
+          </svg>
+        </figure>
+      </section>
+      <section class="inciso" id="inciso-f">
+        <figure class="diagrama" id="diagrama-f">
+          <svg class="diagrama-venn" viewBox="-70 0 510 260" role="img" aria-labelledby="titulo-f">
+            <title id="titulo-f">Diagrama de Venn: B − A</title>
+            <defs>
+              <clipPath id="recorte-circulo-c-f">
+                <circle cx="185" cy="165" r="75" />
+              </clipPath>
+            </defs>
+            <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
+            <circle class="conjunto" cx="132" cy="95" r="75" />
+            <circle class="conjunto" cx="237" cy="95" r="75" />
+            <circle class="conjunto" cx="185" cy="165" r="75" />
+            <circle class="zona-resaltada" cx="237" cy="95" r="75" />
+            <circle class="conjunto-tapa" cx="132" cy="95" r="75" />
+            <circle class="borde borde-a" cx="132" cy="95" r="75" />
+            <circle class="borde borde-b" cx="237" cy="95" r="75" />
+            <circle class="borde borde-c" cx="185" cy="165" r="75" />
+            <g class="elementos elementos-solo-a">
+              <text x="100" y="75" dy=".35em">12</text>
+              <text x="100" y="93" dy=".35em">14</text>
+            </g>
+            <g class="elementos elementos-solo-b">
+              <text x="270" y="75" dy=".35em">3</text>
+              <text x="270" y="93" dy=".35em">5</text>
+            </g>
+            <g class="elementos elementos-solo-c">
+              <text x="172" y="207" dy=".35em">7</text>
+              <text x="198" y="207" dy=".35em">11</text>
+            </g>
+            <g class="elementos elementos-a-y-b">
+              <text x="185" y="60" dy=".35em">8</text>
+            </g>
+            <g class="elementos elementos-a-y-c">
+              <text x="128" y="140" dy=".35em">4</text>
+              <text x="148" y="140" dy=".35em">6</text>
+              <text x="138" y="157" dy=".35em">10</text>
+            </g>
+            <g class="elementos elementos-b-y-c">
+              <text x="222" y="148" dy=".35em">1</text>
+              <text x="244" y="148" dy=".35em">13</text>
+            </g>
+            <g class="elementos elementos-a-b-c">
+              <text x="185" y="120" dy=".35em">2</text>
+            </g>
+            <g class="elementos elementos-fuera">
+              <text x="-28" y="230" dy=".35em">9</text>
+            </g>
+            <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
+            <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
+            <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
+            <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
+          </svg>
+        </figure>
+      </section>
+      <section class="inciso" id="inciso-g">
+        <figure class="diagrama" id="diagrama-g">
+          <svg class="diagrama-venn" viewBox="-70 0 510 300" role="img" aria-labelledby="titulo-g">
+            <title id="titulo-g">Diagrama de Venn: C − B′</title>
+            <defs>
+              <pattern id="rayas-resta" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <rect class="rayas-fondo" width="6" height="6" />
+                <line class="rayas-linea" x1="0" y1="0" x2="0" y2="6" />
+              </pattern>
+              <clipPath id="recorte-circulo-c-g">
+                <circle cx="185" cy="165" r="75" />
+              </clipPath>
+            </defs>
+            <rect class="universo" x="-60" y="8" width="490" height="244" rx="14" />
+            <circle class="conjunto" cx="132" cy="95" r="75" />
+            <circle class="conjunto" cx="237" cy="95" r="75" />
+            <circle class="conjunto" cx="185" cy="165" r="75" />
+            <!-- C completo con rayas: es lo que se va a restar -->
+            <circle class="parte-restada" cx="185" cy="165" r="75" />
+            <!-- B se vuelve a pintar de blanco y solo queda azul lo que sobrevive de C -->
+            <circle class="conjunto" cx="237" cy="95" r="75" />
+            <circle class="zona-resaltada" cx="237" cy="95" r="75" clip-path="url(#recorte-circulo-c-g)" />
+            <circle class="borde borde-a" cx="132" cy="95" r="75" />
+            <circle class="borde borde-b" cx="237" cy="95" r="75" />
+            <circle class="borde borde-c" cx="185" cy="165" r="75" />
+            <g class="elementos elementos-solo-a">
+              <text x="100" y="75" dy=".35em">12</text>
+              <text x="100" y="93" dy=".35em">14</text>
+            </g>
+            <g class="elementos elementos-solo-b">
+              <text x="270" y="75" dy=".35em">3</text>
+              <text x="270" y="93" dy=".35em">5</text>
+            </g>
+            <g class="elementos elementos-solo-c">
+              <text x="172" y="207" dy=".35em">7</text>
+              <text x="198" y="207" dy=".35em">11</text>
+            </g>
+            <g class="elementos elementos-a-y-b">
+              <text x="185" y="60" dy=".35em">8</text>
+            </g>
+            <g class="elementos elementos-a-y-c">
+              <text x="128" y="140" dy=".35em">4</text>
+              <text x="148" y="140" dy=".35em">6</text>
+              <text x="138" y="157" dy=".35em">10</text>
+            </g>
+            <g class="elementos elementos-b-y-c">
+              <text x="222" y="148" dy=".35em">1</text>
+              <text x="244" y="148" dy=".35em">13</text>
+            </g>
+            <g class="elementos elementos-a-b-c">
+              <text x="185" y="120" dy=".35em">2</text>
+            </g>
+            <g class="elementos elementos-fuera">
+              <text x="-28" y="230" dy=".35em">9</text>
+            </g>
+            <text class="nombre-conjunto nombre-a" x="62" y="34" dy=".35em">A</text>
+            <text class="nombre-conjunto nombre-b" x="310" y="34" dy=".35em">B</text>
+            <text class="nombre-conjunto nombre-c" x="292" y="232" dy=".35em">C</text>
+            <text class="nombre-universo" x="-46" y="28" dy=".35em">U</text>
+            <g class="leyenda">
+              <rect class="muestra-restada" x="-55" y="266" width="16" height="16" />
+              <text x="-33" y="274" dy=".35em">Se resta: parte de C que está en B′</text>
+              <rect class="muestra-resultado" x="225" y="266" width="16" height="16" />
+              <text x="247" y="274" dy=".35em">Resultado: C − B′ = {1, 2, 13}</text>
+            </g>
+          </svg>
+        </figure>
+      </section>
+    </main>
+  </body>
 </html>
