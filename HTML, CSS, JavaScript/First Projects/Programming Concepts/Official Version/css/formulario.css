@@ -1,0 +1,961 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap");
+
+/*
+    Examen de formularios HTML
+    Mismo estilo "unidad de control" que index.html y concept.html:
+    azul petróleo oscuro, líneas finas cian, octágonos y acentos lima / ámbar
+*/
+:root {
+    --bg: #04101a;
+    --panel: #08202b;
+    --panel-2: #0b2a37;
+    --line: #1b5566;
+    --line-soft: #103341;
+    --cyan: #27d8f0;
+    --lime: #8dff3d;
+    --amber: #f5a31c;
+    --error: #ff5d6c;
+    --text: #cfe6ec;
+    --text-dim: #7fa5b1;
+    --fuente: "Rajdhani", "Segoe UI", Tahoma, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    padding: 0 clamp(12px, 3vw, 40px);
+    font-family: var(--fuente);
+    font-size: clamp(1.02rem, 0.96rem + 0.32vw, 1.25rem);
+    line-height: 1.6;
+    color: var(--text);
+    background:
+        radial-gradient(ellipse at 50% -10%, #0e3646 0%, transparent 60%),
+        linear-gradient(180deg, #06161f 0%, var(--bg) 100%);
+    background-attachment: fixed;
+}
+
+/* Cuadrícula tenue de fondo */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(39, 216, 240, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(39, 216, 240, 0.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+}
+
+::selection {
+    background: var(--cyan);
+    color: var(--bg);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--line);
+}
+
+code {
+    padding: 0 6px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.9em;
+    color: var(--lime);
+    background: rgba(141, 255, 61, 0.08);
+    border: 1px solid rgba(141, 255, 61, 0.22);
+}
+
+/* ---------- Separador ---------- */
+.separador-seccion {
+    max-width: 960px;
+    height: 1px;
+    margin: 28px auto;
+    border: 0;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+}
+
+/* ---------- Paneles con borde fino y esquinas cortadas ---------- */
+.encabezado-examen,
+.seccion-examen,
+.panel-resultado {
+    --corte: 22px;
+    position: relative;
+    isolation: isolate;
+    max-width: 960px;
+    margin: 0 auto;
+    background: var(--line);
+    clip-path: polygon(
+        var(--corte) 0, calc(100% - var(--corte)) 0,
+        100% var(--corte), 100% calc(100% - var(--corte)),
+        calc(100% - var(--corte)) 100%, var(--corte) 100%,
+        0 calc(100% - var(--corte)), 0 var(--corte)
+    );
+}
+
+.encabezado-examen::before,
+.seccion-examen::before,
+.panel-resultado::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    z-index: -1;
+    background: linear-gradient(160deg, var(--panel-2), var(--panel) 65%);
+    clip-path: polygon(
+        calc(var(--corte) - 0.4px) 0, calc(100% - var(--corte) + 0.4px) 0,
+        100% calc(var(--corte) - 0.4px), 100% calc(100% - var(--corte) + 0.4px),
+        calc(100% - var(--corte) + 0.4px) 100%, calc(var(--corte) - 0.4px) 100%,
+        0 calc(100% - var(--corte) + 0.4px), 0 calc(var(--corte) - 0.4px)
+    );
+}
+
+/* ---------- Cabecera ---------- */
+.encabezado-examen {
+    --corte: 28px;
+    margin-top: 32px;
+    padding: 36px 28px 30px;
+    text-align: center;
+}
+
+.encabezado-examen h1 {
+    font-size: clamp(1.6rem, 4.4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #eaffff;
+    text-shadow: 0 0 18px rgba(39, 216, 240, 0.4);
+}
+
+.subtitulo-examen {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+}
+
+.indicaciones-examen {
+    max-width: 680px;
+    margin: 16px auto 0;
+    color: #bcd8df;
+}
+
+/* ---------- Formulario y secciones ---------- */
+.formulario-examen {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.seccion-examen {
+    width: 100%;
+    padding: 30px 34px 32px;
+}
+
+.grupo-preguntas {
+    min-width: 0;
+    border: 0;
+}
+
+/* El <legend> se muestra como título de la sección */
+.titulo-grupo-preguntas {
+    float: left;
+    width: 100%;
+    margin-bottom: 18px;
+    padding-left: 16px;
+    border-left: 3px solid var(--amber);
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cyan);
+}
+
+.titulo-grupo-preguntas + * {
+    clear: both;
+}
+
+/* ---------- Preguntas ---------- */
+.bloque-pregunta,
+.bloque-datos {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding: 14px 16px 16px;
+    background: rgba(39, 216, 240, 0.05);
+    border-left: 2px solid var(--line);
+    transition: background 0.25s, border-color 0.25s;
+}
+
+.enunciado-pregunta,
+.enunciado-dato {
+    display: block;
+    font-weight: 600;
+    color: #eaffff;
+}
+
+.enunciado-pregunta::before {
+    content: attr(data-numero);
+    margin-right: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--amber);
+}
+
+/* ---------- Opciones (radio y checkbox) ---------- */
+.grupo-opciones {
+    display: grid;
+    gap: 8px;
+}
+
+.opcion-respuesta {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 9px 12px;
+    cursor: pointer;
+    color: #cfe6ec;
+    background: rgba(4, 16, 26, 0.45);
+    border: 1px solid var(--line-soft);
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.opcion-respuesta:has(.control-opcion:checked) {
+    background: rgba(39, 216, 240, 0.12);
+    border-color: var(--cyan);
+}
+
+.control-opcion {
+    flex: 0 0 auto;
+    display: grid;
+    place-content: center;
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: 2px solid var(--cyan);
+}
+
+.control-opcion[type="radio"] {
+    border-radius: 50%;
+}
+
+.control-opcion::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: var(--lime);
+    transform: scale(0);
+    transition: transform 0.15s ease-out;
+}
+
+.control-opcion[type="radio"]::before {
+    border-radius: 50%;
+}
+
+.control-opcion[type="checkbox"]::before {
+    clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
+}
+
+.control-opcion:checked::before {
+    transform: scale(1);
+}
+
+.texto-opcion {
+    min-width: 0;
+}
+
+/* ---------- Campos de texto, selección, área de texto y lista ---------- */
+.campo-respuesta-texto,
+.campo-respuesta-lista,
+.campo-respuesta-largo,
+.campo-seleccion {
+    width: 100%;
+    padding: 10px 14px;
+    font-family: var(--fuente);
+    font-size: 1.05rem;
+    color: #eaffff;
+    background: rgba(4, 16, 26, 0.75);
+    border: 1px solid var(--line);
+    border-radius: 0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo-respuesta-largo {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.campo-seleccion option {
+    color: var(--text);
+    background: var(--panel);
+}
+
+.campo-respuesta-texto::placeholder,
+.campo-respuesta-lista::placeholder,
+.campo-respuesta-largo::placeholder {
+    color: var(--text-dim);
+}
+
+.campo-respuesta-texto:focus,
+.campo-respuesta-lista:focus,
+.campo-respuesta-largo:focus,
+.campo-seleccion:focus,
+.control-opcion:focus-visible {
+    outline: none;
+    border-color: var(--amber);
+    box-shadow: 0 0 0 2px rgba(245, 163, 28, 0.35);
+}
+
+.campo-respuesta-texto[type="date"] {
+    color-scheme: dark;
+}
+
+/* ---------- Retroalimentación después de calificar ---------- */
+.retroalimentacion-pregunta {
+    font-size: 0.98rem;
+    color: var(--text-dim);
+}
+
+.retroalimentacion-pregunta:empty {
+    display: none;
+}
+
+.bloque-pregunta.respuesta-correcta {
+    background: rgba(141, 255, 61, 0.07);
+    border-left-color: var(--lime);
+}
+
+.bloque-pregunta.respuesta-correcta .retroalimentacion-pregunta {
+    color: var(--lime);
+}
+
+.bloque-pregunta.respuesta-incorrecta {
+    background: rgba(255, 93, 108, 0.07);
+    border-left-color: var(--error);
+}
+
+.bloque-pregunta.respuesta-incorrecta .retroalimentacion-pregunta {
+    color: var(--error);
+}
+
+/* ---------- Botones (<input>) y enlaces: octágonos con borde fino ----------
+   Un <input> no admite ::before, así que cada botón va dentro de un marco
+   que dibuja el borde fino y el <input> dibuja el interior. */
+.marco-boton {
+    --corte: 14px;
+    display: inline-flex;
+    padding: 1px;
+    background: var(--cyan);
+    clip-path: polygon(
+        var(--corte) 0, calc(100% - var(--corte)) 0,
+        100% var(--corte), 100% calc(100% - var(--corte)),
+        calc(100% - var(--corte)) 100%, var(--corte) 100%,
+        0 calc(100% - var(--corte)), 0 var(--corte)
+    );
+    transition: background 0.2s, transform 0.2s;
+}
+
+.marco-boton > input {
+    flex: 1;
+    padding: 13px 34px;
+    font-family: var(--fuente);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #eaffff;
+    background: radial-gradient(circle at 20% 50%, rgba(39, 216, 240, 0.35), #07303c 75%);
+    border: 0;
+    border-radius: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    clip-path: polygon(
+        calc(var(--corte) - 0.4px) 0, calc(100% - var(--corte) + 0.4px) 0,
+        100% calc(var(--corte) - 0.4px), 100% calc(100% - var(--corte) + 0.4px),
+        calc(100% - var(--corte) + 0.4px) 100%, calc(var(--corte) - 0.4px) 100%,
+        0 calc(100% - var(--corte) + 0.4px), 0 calc(var(--corte) - 0.4px)
+    );
+    transition: background 0.2s, color 0.2s;
+}
+
+.marco-boton-secundario {
+    --corte: 10px;
+    background: var(--line);
+}
+
+.marco-boton-secundario > input {
+    padding: 9px 22px;
+    font-size: 1rem;
+    color: var(--cyan);
+    background: #06222d;
+}
+
+.marco-boton > input:focus {
+    outline: none;
+}
+
+.marco-boton:has(> input:focus-visible) {
+    background: var(--amber);
+}
+
+.marco-boton:active {
+    transform: scale(0.96);
+}
+
+.enlace-volver-conceptos,
+.enlace-volver-arriba {
+    --corte: 10px;
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 9px 22px;
+    font-family: var(--fuente);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--cyan);
+    background: var(--line);
+    clip-path: polygon(
+        var(--corte) 0, calc(100% - var(--corte)) 0,
+        100% var(--corte), 100% calc(100% - var(--corte)),
+        calc(100% - var(--corte)) 100%, var(--corte) 100%,
+        0 calc(100% - var(--corte)), 0 var(--corte)
+    );
+    transition: background 0.2s, transform 0.2s, color 0.2s;
+}
+
+.enlace-volver-conceptos::before,
+.enlace-volver-arriba::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    z-index: -1;
+    background: #06222d;
+    clip-path: polygon(
+        calc(var(--corte) - 0.4px) 0, calc(100% - var(--corte) + 0.4px) 0,
+        100% calc(var(--corte) - 0.4px), 100% calc(100% - var(--corte) + 0.4px),
+        calc(100% - var(--corte) + 0.4px) 100%, calc(var(--corte) - 0.4px) 100%,
+        0 calc(100% - var(--corte) + 0.4px), 0 calc(var(--corte) - 0.4px)
+    );
+}
+
+.enlace-volver-conceptos::after {
+    content: "◀";
+    order: -1;
+    font-size: 0.75em;
+}
+
+.enlace-volver-arriba::after {
+    content: "▲";
+    order: -1;
+    font-size: 0.75em;
+}
+
+.enlace-volver-conceptos:focus-visible,
+.enlace-volver-arriba:focus-visible {
+    outline: none;
+    background: var(--amber);
+}
+
+.enlace-volver-conceptos:active,
+.enlace-volver-arriba:active {
+    transform: scale(0.96);
+}
+
+.barra-acciones-examen {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+/* ---------- Menú de letras (radios con <label>) ---------- */
+.barra-navegacion-examen {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px 12px 8px;
+    text-align: center;
+    background: rgba(4, 16, 26, 0.93);
+    border-bottom: 1px solid var(--line-soft);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.navegacion-letras {
+    min-width: 0;
+    border: 0;
+}
+
+.titulo-navegacion-letras {
+    margin: 0 auto 6px;
+    padding: 0 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+}
+
+.contenedor-letras {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.control-letra {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.etiqueta-letra {
+    --corte: 10px;
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--text-dim);
+    background: var(--line);
+    clip-path: polygon(
+        var(--corte) 0, calc(100% - var(--corte)) 0,
+        100% var(--corte), 100% calc(100% - var(--corte)),
+        calc(100% - var(--corte)) 100%, var(--corte) 100%,
+        0 calc(100% - var(--corte)), 0 var(--corte)
+    );
+    transition: color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.etiqueta-letra::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    z-index: -1;
+    background: #06222d;
+    clip-path: polygon(
+        calc(var(--corte) - 0.4px) 0, calc(100% - var(--corte) + 0.4px) 0,
+        100% calc(var(--corte) - 0.4px), 100% calc(100% - var(--corte) + 0.4px),
+        calc(100% - var(--corte) + 0.4px) 100%, calc(var(--corte) - 0.4px) 100%,
+        0 calc(100% - var(--corte) + 0.4px), 0 calc(var(--corte) - 0.4px)
+    );
+    transition: background 0.2s;
+}
+
+/* Letra con todas sus preguntas respondidas */
+.etiqueta-letra.letra-completa {
+    color: var(--lime);
+}
+
+/* Letra seleccionada */
+.control-letra:checked + .etiqueta-letra {
+    color: #eaffff;
+    background: var(--cyan);
+}
+
+.control-letra:checked + .etiqueta-letra::before {
+    background: radial-gradient(circle at 50% 40%, rgba(39, 216, 240, 0.55), #07303c 80%);
+}
+
+.control-letra:focus-visible + .etiqueta-letra {
+    background: var(--amber);
+}
+
+/* Después de calificar */
+.etiqueta-letra.letra-perfecta {
+    background: var(--lime);
+}
+
+.etiqueta-letra.letra-con-errores {
+    background: var(--error);
+}
+
+.contador-respondidas {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+}
+
+/* ---------- Un grupo de preguntas por letra ---------- */
+.grupo-letra-examen {
+    display: none;
+    width: 100%;
+}
+
+.grupo-letra-examen.activo {
+    display: block;
+    animation: aparecer 0.35s ease-out both;
+}
+
+.cantidad-preguntas {
+    font-size: 0.7em;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+}
+
+.descripcion-concepto {
+    display: block;
+    margin-top: 6px;
+    padding: 8px 12px;
+    font-weight: 500;
+    color: #bcd8df;
+    background: rgba(4, 16, 26, 0.5);
+    border-left: 3px solid var(--amber);
+}
+
+.nombre-concepto {
+    color: var(--lime);
+}
+
+/* ---------- Resultado ---------- */
+.panel-resultado {
+    padding: 30px 34px 32px;
+    text-align: center;
+}
+
+.panel-resultado[hidden] {
+    display: none;
+}
+
+.panel-resultado:focus {
+    outline: none;
+}
+
+.titulo-resultado {
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cyan);
+}
+
+.puntaje-resultado {
+    margin-top: 10px;
+    font-size: clamp(1.3rem, 3.4vw, 2rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--lime);
+    text-shadow: 0 0 14px rgba(141, 255, 61, 0.35);
+}
+
+.mensaje-resultado {
+    margin-top: 8px;
+    color: #bcd8df;
+}
+
+.letras-a-repasar {
+    margin-top: 10px;
+    color: var(--error);
+}
+
+.letras-a-repasar:empty {
+    display: none;
+}
+
+/* ---------- Pie de página ---------- */
+.pie-pagina {
+    max-width: 960px;
+    margin: 48px auto 0;
+    padding: 24px 0 36px;
+    text-align: center;
+    border-top: 1px solid var(--line-soft);
+}
+
+.acciones-pie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.pie-pagina p {
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+}
+
+/* ---------- Animaciones ---------- */
+.encabezado-examen,
+.seccion-examen {
+    animation: aparecer 0.6s ease-out both;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/*
+   ADAPTACIÓN A CUALQUIER DISPOSITIVO
+*/
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, p, label, legend {
+    overflow-wrap: break-word;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+/* El efecto "hover" solo en dispositivos con ratón
+   (en pantallas táctiles se quedaba pegado al tocar) */
+@media (hover: hover) {
+    .bloque-pregunta:hover {
+        border-left-color: var(--cyan);
+    }
+
+    .opcion-respuesta:hover {
+        background: rgba(141, 255, 61, 0.08);
+        border-color: var(--lime);
+    }
+
+    .marco-boton:has(> input:hover) {
+        background: var(--lime);
+        transform: translateY(-2px);
+    }
+
+    .marco-boton-principal:has(> input:hover) > input {
+        background: #0b4252;
+    }
+
+    .marco-boton-secundario:has(> input:hover) > input {
+        color: #04101a;
+        background: var(--lime);
+    }
+
+    .enlace-volver-conceptos:hover,
+    .enlace-volver-arriba:hover {
+        color: #04101a;
+        background: var(--lime);
+        transform: translateY(-2px);
+    }
+
+    .etiqueta-letra:hover {
+        color: var(--cyan);
+        background: var(--cyan);
+        transform: translateY(-2px);
+    }
+
+    .control-letra:checked + .etiqueta-letra:hover {
+        color: #eaffff;
+    }
+}
+
+/* Pantallas táctiles: áreas de toque cómodas (mínimo 44 px) */
+@media (pointer: coarse) {
+    .marco-boton > input,
+    .enlace-volver-conceptos,
+    .enlace-volver-arriba,
+    .campo-seleccion,
+    .campo-respuesta-texto,
+    .campo-respuesta-lista {
+        min-height: 44px;
+    }
+
+    .opcion-respuesta {
+        min-height: 44px;
+        align-items: center;
+    }
+}
+
+/* Monitores grandes y TV */
+@media (min-width: 1500px) {
+    .encabezado-examen,
+    .seccion-examen,
+    .panel-resultado,
+    .formulario-examen,
+    .pie-pagina,
+    .barra-navegacion-examen,
+    .separador-seccion {
+        max-width: 1120px;
+    }
+}
+
+/* Tablets y laptops pequeñas */
+@media (max-width: 1024px) {
+    .encabezado-examen {
+        --corte: 22px;
+    }
+
+    .seccion-examen,
+    .panel-resultado {
+        padding: 26px 24px 28px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 640px) {
+    body {
+        padding: 0 12px;
+    }
+
+    .encabezado-examen {
+        --corte: 16px;
+        margin-top: 16px;
+        padding: 26px 16px 22px;
+    }
+
+    .seccion-examen,
+    .panel-resultado {
+        --corte: 16px;
+        padding: 22px 14px 24px;
+    }
+
+    .separador-seccion {
+        margin: 20px auto;
+    }
+
+    .formulario-examen {
+        gap: 20px;
+    }
+
+    .titulo-grupo-preguntas {
+        padding-left: 12px;
+    }
+
+    .bloque-pregunta,
+    .bloque-datos {
+        padding: 12px 10px 14px;
+    }
+
+    .opcion-respuesta {
+        padding: 9px 10px;
+    }
+
+    /* Botones a lo ancho, fáciles de tocar con el pulgar */
+    .barra-acciones-examen,
+    .acciones-pie {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .marco-boton,
+    .enlace-volver-conceptos,
+    .enlace-volver-arriba {
+        width: 100%;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .pie-pagina {
+        margin-top: 32px;
+    }
+
+    /* Menú de letras: una sola fila que se desliza con el dedo */
+    .barra-navegacion-examen {
+        padding: 8px 12px 6px;
+    }
+
+    .contenedor-letras {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 6px;
+        padding-bottom: 4px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .contenedor-letras::-webkit-scrollbar {
+        display: none;
+    }
+
+    .etiqueta-letra {
+        flex: 0 0 auto;
+        width: 46px;
+        height: 46px;
+    }
+}
+
+/* Celulares muy pequeños */
+@media (max-width: 360px) {
+    .encabezado-examen h1 {
+        font-size: 1.4rem;
+        letter-spacing: 0.05em;
+    }
+
+    .subtitulo-examen {
+        letter-spacing: 0.06em;
+        font-size: 1rem;
+    }
+
+    .marco-boton-principal > input {
+        letter-spacing: 0.06em;
+    }
+}
+
+/* Celulares en horizontal (poca altura) */
+@media (max-height: 480px) and (orientation: landscape) {
+    .encabezado-examen {
+        margin-top: 12px;
+        padding-block: 20px 18px;
+    }
+
+    .barra-navegacion-examen {
+        position: static;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
