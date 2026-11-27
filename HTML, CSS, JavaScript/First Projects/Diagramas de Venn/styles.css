@@ -26,7 +26,6 @@ body {
 }
 
 /* Fondo y formas */
-
 .universo {
   fill: #f1f5fb;
 }
@@ -41,6 +40,19 @@ body {
 
 .zona-resaltada {
   fill: #6ea8fe;
+}
+
+.parte-restada {
+  fill: url(#rayas-resta);
+}
+
+.rayas-fondo {
+  fill: #e2e8f0;
+}
+
+.rayas-linea {
+  stroke: #94a3b8;
+  stroke-width: 2;
 }
 
 .borde {
@@ -61,7 +73,6 @@ body {
 }
 
 /* Textos */
-
 .elementos text {
   font-size: 12px;
   font-weight: bold;
@@ -91,4 +102,19 @@ body {
   font-size: 14px;
   font-weight: bold;
   fill: #64748b;
+}
+
+/* Leyenda del inciso g */
+.leyenda text {
+  font-size: 10.5px;
+  fill: #1e293b;
+}
+
+.muestra-restada {
+  fill: url(#rayas-resta);
+  stroke: #94a3b8;
+}
+
+.muestra-resultado {
+  fill: #6ea8fe;
 }
